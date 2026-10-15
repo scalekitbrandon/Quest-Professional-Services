@@ -1,0 +1,11 @@
+# Old Wix URLs → new pages (301 keeps any rankings/links the old site earned).
+# Cloudflare reads this file from the build output automatically.
+/services                                   /                                          301
+/google-reviews                             /reviews/                                  301
+/request-a-quote                            /#quote                                    301
+/file-share                                 /                                          301
+/service-page/relocation                    /residential-relocation/                   301
+/service-page/storage-organization          /specialty-services/storage-organization/  301
+/service-page/packing-wrapping              /residential-relocation/packing-unpacking/ 301
+/service-page/logistics-and-transportation  /specialty-services/freight-transport/     301
+/service-page/domestic-trucking             /specialty-services/freight-transport/     301
