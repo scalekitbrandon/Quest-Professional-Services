@@ -1,0 +1,270 @@
+---
+// "What We Do" — 6 featured service cards (image, title, blurb, local area
+// line, Learn More). Layout follows Brandon's reference; each card links to
+// the service's own page so the home page passes authority to it.
+
+import { photos, type Photo } from '../../data/photos';
+
+interface Service {
+  title: string;
+  href: string;
+  blurb: string;
+  area: string;
+  /** Card photo from data/photos.ts. Without one, a branded icon panel shows instead. */
+  image?: Photo;
+  icon: string;
+}
+
+const services: Service[] = [
+  {
+    title: 'Local Relocation',
+    href: '/residential-relocation/local-relocation/',
+    image: photos.vanRampCard,
+    blurb: 'Careful, on-time apartment, condo, rowhouse, and home relocations, with your belongings wrapped, loaded, and placed right where you want them.',
+    area: 'Washington, DC & Alexandria',
+    icon: 'home',
+  },
+  {
+    title: 'Office & Corporate Relocation',
+    href: '/commercial-relocation/office-relocation/',
+    image: photos.handTruckCard,
+    blurb: 'Office, headquarters, and business relocations scheduled after hours and around your building’s rules to keep downtime low.',
+    area: 'Downtown DC & Northern Virginia',
+    icon: 'office',
+  },
+  {
+    title: 'Event Logistics',
+    href: '/event-logistics/',
+    image: photos.eventCard,
+    blurb: 'Event transportation, load-in, setup, breakdown, and deliveries timed to your venue’s schedule, from first pickup to final load-out.',
+    area: 'DC, National Harbor & Alexandria',
+    icon: 'event',
+  },
+  {
+    title: 'Long-Distance Relocation',
+    href: '/residential-relocation/long-distance-relocation/',
+    image: photos.truckInteriorCard,
+    blurb: 'Interstate relocations to any state in the lower 48, planned around your dates and handled by the same crew from start to finish.',
+    area: 'DC Metro to the Lower 48',
+    icon: 'route',
+  },
+  {
+    title: 'Freight Transport',
+    href: '/specialty-services/freight-transport/',
+    image: photos.freightCard,
+    blurb: 'General freight, pickup, and delivery across the U.S. (excluding Alaska and Hawaii) for businesses that need loads transported reliably.',
+    area: 'Nationwide From the DC Metro',
+    icon: 'truck',
+  },
+  {
+    title: 'Estate Cleanouts & Liquidation',
+    href: '/specialty-services/estate-cleanouts/',
+    image: photos.roomAfterCard,
+    blurb: 'Estate clean up, organization, estate sales, and full cleanouts, handled respectfully and on your family’s timeline.',
+    area: 'DC, Alexandria & Maryland',
+    icon: 'cleanout',
+  },
+];
+---
+
+<section class="wwd" aria-labelledby="wwd-heading">
+  <div class="wwd-inner">
+    <header class="wwd-head">
+      <p class="eyebrow">What We Do</p>
+      <h2 id="wwd-heading">Relocation &amp; Event Logistics Services in Washington, DC</h2>
+      <p class="sub">
+        From a Capitol Hill rowhouse to a downtown office suite to a conference load-in at
+        National Harbor, one team handles it all, with a free, upfront quote on every job.
+      </p>
+    </header>
+
+    <ul class="grid">
+      {services.map((s) => (
+        <li class="card">
+          <a class="media" href={s.href} tabindex="-1" aria-hidden="true">
+            {s.image ? (
+              <img src={s.image.src} alt={s.image.alt} loading="lazy" width="800" height="432" />
+            ) : (
+              <span class="placeholder">
+                <svg viewBox="0 0 64 64">
+                  {s.icon === 'home' && <path d="M6 30 32 8l26 22M12 26v30h40V26M26 56V40h12v16" />}
+                  {s.icon === 'route' && <><path d="M14 52c0-10 36-6 36-18S30 22 30 14" stroke-dasharray="4 5" /><circle cx="14" cy="52" r="5" /><path d="M30 4a8 8 0 0 0-8 8c0 6 8 13 8 13s8-7 8-13a8 8 0 0 0-8-8z" /></>}
+                  {s.icon === 'office' && <path d="M10 58V10h28v48M38 24h16v34M6 58h52M18 20h4M26 20h4M18 30h4M26 30h4M18 40h4M26 40h4M44 34h4M44 44h4M20 58v-8h8v8" />}
+                  {s.icon === 'truck' && <><path d="M4 16h34v30H4zM38 26h12l10 11v9H38zM48 26v11h12" /><circle cx="15" cy="49" r="5" /><circle cx="49" cy="49" r="5" /></>}
+                  {s.icon === 'event' && <path d="M6 22 32 8l26 14M10 22v6h44v-6M14 28v28M50 28v28M22 56V40h20v16M8 56h48M26 34h12" />}
+                  {s.icon === 'box' && <path d="M8 20 32 8l24 12v26L32 58 8 46zM8 20l24 12 24-12M32 32v26M20 14l24 12" />}
+                  {s.icon === 'cleanout' && <path d="M8 58h48M12 58V28L32 12l20 16v30M24 58V42h16v16M20 32h6v6h-6zM38 32h6v6h-6zM32 4v8" />}
+                </svg>
+              </span>
+            )}
+          </a>
+          <div class="body">
+            <h3><a href={s.href}>{s.title}</a></h3>
+            <p class="blurb">{s.blurb}</p>
+            <p class="area">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" /></svg>
+              {s.area}
+            </p>
+            <a class="btn" href={s.href} aria-label={`Learn more about ${s.title}`}>Learn More</a>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .wwd {
+    padding: var(--space-7) max(16px, 5%) var(--space-8);
+    background: var(--white);
+  }
+  .wwd-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .wwd-head {
+    max-width: 820px;
+    margin: 0 auto var(--space-6);
+    text-align: center;
+  }
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  h2 {
+    font-size: clamp(2.125rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    color: var(--black);
+    text-wrap: balance;
+  }
+  .sub {
+    margin: var(--space-3) 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #5a5a5a;
+    text-wrap: balance;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 12px 28px rgb(0 0 0 / 0.1);
+    transform: translateY(-3px);
+  }
+
+  .media {
+    display: block;
+    aspect-ratio: 1.85;
+    overflow: hidden;
+  }
+  .media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .placeholder {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 30% 20%, var(--maroon-light), var(--maroon) 50%, var(--maroon-dark));
+  }
+  .placeholder svg {
+    width: 84px;
+    height: 84px;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+  h3 a {
+    color: var(--black);
+    text-decoration: none;
+  }
+  h3 a:hover {
+    color: var(--maroon);
+  }
+  .blurb {
+    margin: var(--space-3) 0 var(--space-2);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #3d3d3d;
+  }
+  .area {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 var(--space-4);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+  }
+  .area svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+  .btn {
+    margin-top: auto;
+    padding: 14px 40px;
+    border-radius: var(--radius-sm);
+    background: var(--maroon);
+    color: var(--white);
+    font-weight: var(--font-weight-button);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn:hover {
+    background: var(--maroon-dark);
+  }
+
+  @media (max-width: 1000px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .wwd {
+      padding-block: var(--space-6) var(--space-7);
+    }
+  }
+</style>

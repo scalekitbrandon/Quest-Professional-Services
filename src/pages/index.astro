@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
+import Hero from '../components/sections/Hero.astro';
+import WhatWeDo from '../components/sections/WhatWeDo.astro';
+import WhyChoose from '../components/sections/WhyChoose.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import PhotoGallery from '../components/sections/PhotoGallery.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import ServiceAreas from '../components/sections/ServiceAreas.astro';
+import QuoteForm from '../components/sections/QuoteForm.astro';
+import { site } from '../data/site';
+import { photos } from '../data/photos';
+---
+
+<BaseLayout
+  title="Washington, DC Relocation & Event Logistics Company | Quest Professional Services"
+  description="Residential and corporate relocation, event logistics, and freight across Washington, DC, Northern Virginia, and Maryland. DOT & MC certified. Free quotes."
+  ogImage="/images/quest-box-truck-side-profile-og.jpg"
+>
+  <SiteHeader slot="header" />
+
+  <LocalBusinessSchema
+    name={site.name}
+    url={Astro.site?.toString() ?? '/'}
+    businessType="LocalBusiness"
+    phone={site.phone}
+    email={site.email}
+    streetAddress={site.address.street}
+    addressLocality={site.address.city}
+    addressRegion={site.address.region}
+    postalCode={site.address.postalCode}
+    logo="/logo-qps.svg"
+    identifiers={[
+      { propertyID: 'USDOT', value: site.credentials.usdot },
+      { propertyID: 'MC', value: site.credentials.mc },
+    ]}
+  />
+
+  <Hero image={photos.truckSide} />
+  <WhatWeDo />
+  <WhyChoose />
+  <HowItWorks />
+  <PhotoGallery />
+  <Reviews />
+  <ServiceAreas />
+  <QuoteForm />
+
+  <!-- Sections get added here one at a time as Brandon supplies them. -->
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

@@ -1,0 +1,91 @@
+---
+// About — /about/. Brand + trust page: who Quest is, credentials, how they
+// work, and links down to every service hub. Only client-confirmed facts;
+// the founder/owner story is pending from the client.
+import SiteLayout from '../layouts/SiteLayout.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import ServiceHero from '../components/service/ServiceHero.astro';
+import ServiceOverview from '../components/service/ServiceOverview.astro';
+import ServiceApproach from '../components/service/ServiceApproach.astro';
+import ServiceCards from '../components/service/ServiceCards.astro';
+import Credentials from '../components/sections/Credentials.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import ServiceAreas from '../components/sections/ServiceAreas.astro';
+import QuoteForm from '../components/sections/QuoteForm.astro';
+import { site } from '../data/site';
+import { heroImages } from '../data/photos';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about/' },
+];
+const abs = (path: string) => new URL(path, Astro.site).toString();
+
+const atAGlance = [
+  'Based in Fort Washington, MD',
+  '20+ years of experience',
+  'U.S. DOT & MC certified',
+  'Licensed & insured',
+  'Local relocations across MD, DC & VA',
+  'Long-distance to all lower 48 states',
+];
+
+const pillars = [
+  { name: 'Residential Relocation', href: '/residential-relocation/', icon: 'home', blurb: 'Local and interstate relocations, plus packing and unpacking.' },
+  { name: 'Commercial Relocation', href: '/commercial-relocation/', icon: 'office', blurb: 'Office relocations, corporate and business relocations, and commercial packing.' },
+  { name: 'Event Logistics', href: '/event-logistics/', icon: 'event', blurb: 'Event transportation, setup and breakdown, and pickup and delivery.' },
+  { name: 'Specialty Services', href: '/specialty-services/', icon: 'truck', blurb: 'Freight transport, estate cleanouts and liquidation, and storage organization.' },
+];
+---
+
+<SiteLayout
+  title={`About ${site.name} | DC Metro Relocation & Event Logistics`}
+  description="Meet Quest Professional Services: DOT and MC certified, licensed and insured relocation services in Fort Washington, MD, with 20+ years serving the DC metro."
+>
+  <BreadcrumbSchema items={crumbs.map((c) => ({ label: c.label, url: abs(c.href) }))} />
+
+  <ServiceHero
+    kicker="About Us"
+    h1={`About ${site.name}`}
+    intro="A relocation and event logistics company based just outside DC in Fort Washington, MD, with more than 20 years of experience serving families, businesses, event teams, and estates across Washington, DC, Northern Virginia, and Maryland."
+    crumbs={crumbs}
+    image={heroImages['/about/']}
+  />
+
+  <ServiceOverview
+    eyebrow="Our Story"
+    heading="DC Metro Relocation & Logistics With 20+ Years of Experience"
+    body={[
+      `${site.name} is based on Swan Creek Road in Fort Washington, MD, minutes from Washington, DC and across the Wilson Bridge from Alexandria. For more than 20 years we've helped people with some of the biggest days in their lives: relocating into a first home, relocating across the country, opening a new office, or settling a loved one's estate.`,
+      'Today we\'re a full-service company, so one call covers it all: residential and corporate relocation, event logistics, packing and unpacking, freight transport, estate cleanouts and liquidation, and storage organization, locally and across the lower 48.',
+      'What hasn\'t changed is how we work. Every job gets a clear, upfront price, a crew that treats your things like their own, and one team you can call from the first quote to the last box.',
+    ]}
+    included={atAGlance}
+    includedHeading="At a Glance"
+  />
+
+  <Credentials />
+
+  <ServiceApproach
+    eyebrow="What We Stand For"
+    heading="How We Work on Every Job"
+    body={[
+      'Whether it\'s a one-bedroom apartment in Alexandria, an office suite in DC, or a freight load headed to Texas, every job gets the same standards.',
+    ]}
+    points={[
+      { title: 'Upfront & Honest', text: 'You get a free quote before relocation day, with no surprise charges added at the end.' },
+      { title: 'Careful With Your Things', text: 'Furniture is wrapped and padded, and every item is handled like it belongs to our own family.' },
+      { title: 'One Team, Start to Finish', text: 'Packing, relocation, cleanouts, and delivery, all handled by one crew you can reach directly.' },
+    ]}
+  />
+
+  <ServiceCards
+    heading="What We Do"
+    intro="Four service groups, one team. Choose a category to see every service in it."
+    cards={pillars}
+  />
+
+  <Reviews />
+  <ServiceAreas />
+  <QuoteForm />
+</SiteLayout>

@@ -1,0 +1,203 @@
+---
+// Service Areas — city links (feed the /service-areas/<city>/ pages) beside a
+// map of the Fort Washington office. No reference supplied; designed in the
+// site's existing style. City list lives in site.serviceAreas.
+import { site } from '../../data/site';
+
+const { street, city, region, postalCode } = site.address;
+// Keyless Google Maps place embed (the old ?output=embed URL 301s here).
+const mapQuery = encodeURIComponent(`${street}, ${city}, ${region} ${postalCode}`).replace(/%20/g, '+');
+const mapSrc = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${mapQuery}!6i11`;
+---
+
+<section class="areas" aria-labelledby="areas-heading">
+  <div class="areas-inner">
+    <div class="content">
+      <p class="eyebrow">Service Areas</p>
+      <h2 id="areas-heading">Serving Washington, DC, Northern Virginia &amp; Maryland</h2>
+      <p class="sub">
+        From our base just outside DC in Fort Washington, MD, we handle relocations, event
+        logistics, estate cleanouts, and deliveries across Washington, DC, Alexandria and Northern
+        Virginia, and Prince George's County, plus long-distance relocations and freight to every
+        state in the lower 48.
+      </p>
+
+      <ul class="cities">
+        {site.serviceAreas.map((a) => (
+          <li>
+            <a href={`/service-areas/${a.slug}/`}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" /></svg>
+              {a.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p class="note">
+        Don't see your town? <a href={site.phoneHref}>Call {site.phone}</a> and we'll let you know
+        if we can help, or <a href="/service-areas/">view all service areas</a>.
+      </p>
+    </div>
+
+    <div class="map">
+      <iframe
+        title={`Map of ${site.name} in ${city}, ${region}`}
+        src={mapSrc}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+      <div class="map-card">
+        <strong>{site.name}</strong>
+        <span>{street}<br />{city}, {region} {postalCode}</span>
+        <a href={site.phoneHref}>{site.phone}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .areas {
+    padding: var(--space-8) max(16px, 5%);
+    background: var(--cream);
+  }
+  .areas-inner {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: var(--space-7);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  h2 {
+    font-size: clamp(2rem, 3.2vw, 2.875rem);
+    line-height: 1.1;
+    color: var(--black);
+    text-wrap: balance;
+  }
+  .sub {
+    margin: var(--space-3) 0 var(--space-5);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #5a5a5a;
+  }
+
+  .cities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    margin: 0 0 var(--space-5);
+    padding: 0;
+    list-style: none;
+  }
+  .cities a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    background: var(--white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--black);
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .cities a:hover {
+    border-color: var(--maroon);
+    color: var(--maroon);
+  }
+  .cities svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    fill: var(--maroon);
+  }
+
+  .note {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+  }
+  .note a {
+    color: var(--maroon);
+    font-weight: 600;
+  }
+
+  .map {
+    position: relative;
+    aspect-ratio: 0.95;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.12);
+    background: var(--color-border);
+  }
+  .map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .map-card {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 0.15);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+  .map-card strong {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    font-size: 1.125rem;
+    color: var(--maroon);
+  }
+  .map-card a {
+    color: var(--black);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  @media (max-width: 960px) {
+    .areas-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    .map {
+      aspect-ratio: 1.4;
+    }
+  }
+  @media (max-width: 600px) {
+    .areas {
+      padding-block: var(--space-7);
+    }
+    .cities {
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .cities a {
+      padding: 10px;
+      font-size: 0.875rem;
+    }
+    .map {
+      aspect-ratio: 0.9;
+    }
+  }
+</style>

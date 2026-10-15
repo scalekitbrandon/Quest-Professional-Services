@@ -1,0 +1,20 @@
+---
+// Line icons for service cards and placeholders. Stroke color comes from the parent.
+interface Props {
+  name: string;
+}
+const { name } = Astro.props;
+---
+
+<svg viewBox="0 0 64 64" aria-hidden="true">
+  {name === 'home' && <path d="M6 30 32 8l26 22M12 26v30h40V26M26 56V40h12v16" />}
+  {name === 'route' && <><path d="M14 52c0-10 36-6 36-18S30 22 30 14" stroke-dasharray="4 5" /><circle cx="14" cy="52" r="5" /><path d="M30 4a8 8 0 0 0-8 8c0 6 8 13 8 13s8-7 8-13a8 8 0 0 0-8-8z" /></>}
+  {name === 'box' && <path d="M8 20 32 8l24 12v26L32 58 8 46zM8 20l24 12 24-12M32 32v26M20 14l24 12" />}
+  {name === 'shelves' && <path d="M8 6v52M56 6v52M8 22h48M8 40h48M14 22v-10h12v10M32 22v-7h10v7M14 40v-12h8v12M28 40v-8h18v8M16 58v-12h14v12M36 58v-9h12v9" />}
+  {name === 'estate' && <path d="M8 58h48M12 58V28L32 12l20 16v30M24 58V42h16v16M20 32h6v6h-6zM38 32h6v6h-6zM32 4v8" />}
+  {name === 'office' && <path d="M10 58V10h28v48M38 24h16v34M6 58h52M18 20h4M26 20h4M18 30h4M26 30h4M18 40h4M26 40h4M44 34h4M44 44h4M20 58v-8h8v8" />}
+  {name === 'building' && <path d="M6 58h52M10 58V26l12-8v40M22 58V12l18-6v52M40 58V22l14 6v30M28 18h6M28 28h6M28 38h6M14 34h4M14 44h4M46 34h4M46 44h4" />}
+  {name === 'event' && <path d="M6 22 32 8l26 14M10 22v6h44v-6M14 28v28M50 28v28M22 56V40h20v16M8 56h48M26 34h12" />}
+  {name === 'truck' && <><path d="M4 16h34v30H4zM38 26h12l10 11v9H38zM48 26v11h12" /><circle cx="15" cy="49" r="5" /><circle cx="49" cy="49" r="5" /></>}
+  {name === 'handoff' && <path d="M10 26 32 14l22 12v20L32 58 10 46zM10 26l22 12 22-12M32 38v20M4 54l10-6M60 54l-10-6" />}
+</svg>

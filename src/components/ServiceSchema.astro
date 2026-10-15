@@ -1,0 +1,41 @@
+---
+// Service JSON-LD for a single service page: names the service, ties it to
+// the business as provider (same NAP as the home page schema), and lists
+// the areas served.
+import { site } from '../data/site';
+
+interface Props {
+  name: string;
+  serviceType: string;
+  description: string;
+  url: string;
+  areaServed: string[];
+}
+
+const { name, serviceType, description, url, areaServed } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name,
+  serviceType,
+  description,
+  url,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: site.name,
+    telephone: site.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: site.address.street,
+      addressLocality: site.address.city,
+      addressRegion: site.address.region,
+      postalCode: site.address.postalCode,
+      addressCountry: 'US',
+    },
+  },
+  areaServed: areaServed.map((a) => ({ '@type': 'Place', name: a })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

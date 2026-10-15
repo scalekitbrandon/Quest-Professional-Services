@@ -1,0 +1,142 @@
+---
+// "What is [service]" — plain-language definition (featured-snippet target)
+// beside a "What's Included" checklist card with the quote CTA.
+interface Props {
+  heading: string;
+  body: string[];
+  included: string[];
+  includedHeading?: string;
+  eyebrow?: string;
+}
+
+const { heading, body, included, includedHeading = 'What’s Included', eyebrow = 'Overview' } = Astro.props;
+---
+
+<section class="overview" aria-labelledby="overview-heading">
+  <div class="overview-inner">
+    <div class="copy">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id="overview-heading">{heading}</h2>
+      {body.map((p) => <p class="body">{p}</p>)}
+    </div>
+
+    <aside class="included">
+      <h3>{includedHeading}</h3>
+      <ul>
+        {included.map((item) => (
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 13 6 6L21 6" /></svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <a class="btn" href="#quote">Get a Free Quote</a>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .overview {
+    padding: var(--space-8) max(16px, 5%);
+    background: var(--white);
+  }
+  .overview-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+    gap: var(--space-7);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  h2 {
+    margin-bottom: var(--space-4);
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.1;
+    color: var(--black);
+    text-wrap: balance;
+  }
+  .body {
+    margin: 0 0 var(--space-3);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #444;
+  }
+
+  .included {
+    padding: var(--space-5);
+    background: var(--cream);
+    border-top: 5px solid var(--gold);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.08);
+  }
+  .included h3 {
+    margin-bottom: var(--space-3);
+    font-size: 1.75rem;
+    color: var(--maroon);
+  }
+  .included ul {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 var(--space-4);
+    padding: 0;
+    list-style: none;
+  }
+  .included li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    color: var(--black);
+  }
+  .included svg {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    fill: none;
+    stroke: var(--gold-dark);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .btn {
+    display: block;
+    padding: 15px 24px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--maroon-light), var(--maroon-dark));
+    color: var(--white);
+    font-weight: var(--font-weight-button);
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: filter 0.2s;
+  }
+  .btn:hover {
+    filter: brightness(1.15);
+  }
+
+  @media (max-width: 960px) {
+    .overview-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+  }
+  @media (max-width: 600px) {
+    .overview {
+      padding-block: var(--space-7);
+    }
+    .included {
+      padding: var(--space-4);
+    }
+  }
+</style>

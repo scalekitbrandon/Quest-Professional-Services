@@ -1,0 +1,95 @@
+{
+  "pillar": "commercial-relocation",
+  "order": 3,
+  "primaryKeyword": "commercial packing services Washington DC",
+  "secondaryKeywords": [
+    "office packing services DC",
+    "business packing and unpacking Washington DC",
+    "inventory packing DC metro",
+    "commercial unpacking Northern Virginia",
+    "professional packers for businesses DC"
+  ],
+  "title": "Commercial Packing & Unpacking in Washington, DC | Quest Professional Services",
+  "description": "Commercial packing and unpacking in Washington, DC. Offices, stores, and inventory packed, labeled by destination, and unpacked so you reopen fast.",
+  "kicker": "Commercial Relocation",
+  "h1": "Commercial Packing & Unpacking Services in Washington, DC",
+  "intro": "Your team has a business to run. Our crew packs offices, stores, and stock rooms across Washington, DC, Northern Virginia, and Maryland, labels everything by destination, and unpacks at your new location.",
+  "name": "Commercial Packing",
+  "serviceType": "Commercial packing and unpacking",
+  "icon": "box",
+  "overview": {
+    "heading": "What Is Commercial Packing?",
+    "body": [
+      "Commercial packing is professional packing for businesses: office supplies and files, retail inventory, displays, stock room shelving, kitchen equipment, and anything else that has to be boxed up before a relocation. Unpacking puts it all back where it belongs at your new location so your team doesn't lose days sorting boxes.",
+      "Quest Professional Services offers commercial packing on its own or as part of an office relocation or business relocation. We work around your hours so packing doesn't interrupt your customers."
+    ]
+  },
+  "included": [
+    "Packing of offices, files, and supplies",
+    "Retail inventory and display packing",
+    "Stock room and shelving contents",
+    "Labels by destination room, desk, or department",
+    "Unpacking and setup at the new location",
+    "Removal of empty boxes and packing materials"
+  ],
+  "whoFor": {
+    "heading": "Who Uses Commercial Packing",
+    "intro": "Commercial packing makes sense any time your staff's time is better spent on the business. We pack for:",
+    "items": [
+      "Offices preparing for a relocation",
+      "Retail stores relocating inventory",
+      "Medical and professional practices",
+      "Warehouses and stock rooms",
+      "Businesses relocating into temporary space during a renovation",
+      "Organizations consolidating locations"
+    ]
+  },
+  "approach": {
+    "heading": "How We Pack a Business",
+    "body": [
+      "We plan packing around your hours: we can pack after closing so customers never see boxes, or pack in stages so the most-used items go last.",
+      "Every box is labeled for its destination, whether that's a room, a desk, or a department, so unpacking at the new location is quick and organized."
+    ],
+    "points": [
+      {
+        "title": "Packed After Hours",
+        "text": "We can work around your business hours to keep you open."
+      },
+      {
+        "title": "Labeled by Destination",
+        "text": "Room, desk, or department, so every box lands in the right spot."
+      },
+      {
+        "title": "Unpacked and Cleared",
+        "text": "We unpack and take the empty boxes with us."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does commercial packing cost?",
+      "a": "It depends on how much needs to be packed and what it is. We include packing in your free, upfront quote so you see the full cost before we start."
+    },
+    {
+      "q": "Can you pack outside our business hours?",
+      "a": "Yes. Evening and weekend packing is available so your business can stay open."
+    },
+    {
+      "q": "Do you pack without doing the relocation?",
+      "a": "Yes. We can pack or unpack on their own, but most businesses book packing together with an office relocation or business relocation."
+    },
+    {
+      "q": "How do you keep track of everything?",
+      "a": "Every box is labeled by destination and contents, and we can work from your floor plan or a list from your office manager."
+    },
+    {
+      "q": "Do you also pack homes?",
+      "a": "Yes. For residential packing, see our packing and unpacking services page."
+    }
+  ],
+  "related": [
+    "packing-unpacking",
+    "freight-transport",
+    "estate-cleanouts"
+  ]
+}

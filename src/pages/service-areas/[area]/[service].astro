@@ -1,0 +1,93 @@
+---
+// Service-in-town page — /service-areas/<area>/<service>/ (primary markets
+// only, e.g. Alexandria office relocation). Same section rhythm as a service
+// page, but every block of copy is written for the town. Links up to the
+// town page and across to the main service page.
+import { getCollection, type CollectionEntry } from 'astro:content';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+import ServiceSchema from '../../../components/ServiceSchema.astro';
+import ServiceHero from '../../../components/service/ServiceHero.astro';
+import ServiceOverview from '../../../components/service/ServiceOverview.astro';
+import ServiceApproach from '../../../components/service/ServiceApproach.astro';
+import RelatedLinks from '../../../components/service/RelatedLinks.astro';
+import HowItWorks from '../../../components/sections/HowItWorks.astro';
+import Reviews from '../../../components/sections/Reviews.astro';
+import FAQ from '../../../components/sections/FAQ.astro';
+import QuoteForm from '../../../components/sections/QuoteForm.astro';
+import { site } from '../../../data/site';
+import { heroImages, photoStrips } from '../../../data/photos';
+import PhotoStrip from '../../../components/sections/PhotoStrip.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('areaServices');
+  return entries.map((entry) => ({
+    params: { area: entry.data.area, service: entry.data.service },
+    props: { entry, all: entries },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'areaServices'>;
+  all: CollectionEntry<'areaServices'>[];
+}
+
+const { entry, all } = Astro.props;
+const d = entry.data;
+const area = site.serviceAreas.find((a) => a.slug === d.area);
+if (!area) throw new Error(`areaServices/${entry.id}: unknown area "${d.area}"`);
+const services = await getCollection('services');
+const main = services.find((s) => s.id === d.service);
+if (!main) throw new Error(`areaServices/${entry.id}: unknown service "${d.service}"`);
+const pillar = site.servicePillars.find((p) => p.slug === main.data.pillar)!;
+const serviceName = pillar.services.find((s) => s.slug === d.service)?.name ?? main.data.name;
+
+const here = `/service-areas/${d.area}/${d.service}/`;
+// Other services written for this same town
+const siblings = all
+  .filter((e) => e.data.area === d.area && e.id !== entry.id)
+  .map((e) => ({
+    label: site.servicePillars.flatMap((p) => p.services).find((s) => s.slug === e.data.service)?.name ?? e.data.service,
+    href: `/service-areas/${d.area}/${e.data.service}/`,
+  }));
+const related = [{ label: `${serviceName} (all areas)`, href: `/${pillar.slug}/${d.service}/` }];
+const areas = site.serviceAreas.map((a) => ({ label: a.name, href: `/service-areas/${a.slug}/` }));
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: area.name, href: `/service-areas/${d.area}/` },
+  { label: serviceName, href: here },
+];
+const abs = (path: string) => new URL(path, Astro.site).toString();
+const city = area.name.replace(/, (MD|VA|DC)$/, '');
+---
+
+<SiteLayout title={d.title} description={d.description}>
+  <BreadcrumbSchema items={crumbs.map((c) => ({ label: c.label, url: abs(c.href) }))} />
+  <ServiceSchema
+    name={`${serviceName} in ${area.name}`}
+    serviceType={main.data.serviceType}
+    description={d.description}
+    url={abs(here)}
+    areaServed={[area.name]}
+  />
+
+  <ServiceHero kicker={d.kicker} h1={d.h1} intro={d.intro} crumbs={crumbs} image={heroImages[here]} />
+  <ServiceOverview heading={d.overview.heading} body={d.overview.body} included={d.included} />
+  {photoStrips[here] && <PhotoStrip {...photoStrips[here]} />}
+  <ServiceApproach eyebrow="Local Knowledge" heading={d.local.heading} body={d.local.body} points={d.local.points} />
+  <HowItWorks />
+  <Reviews />
+  <FAQ heading={`${serviceName} in ${area.name}: FAQs`} faqs={d.faqs} />
+  <RelatedLinks
+    serviceName={serviceName}
+    siblings={siblings}
+    related={related}
+    areas={areas}
+    pillarName={`${city}`}
+    pillarHref={`/service-areas/${d.area}/`}
+    relatedHeading="Across the DC Metro"
+  />
+  <QuoteForm heading={`Get Your Free ${serviceName} Quote in ${city}`} />
+</SiteLayout>

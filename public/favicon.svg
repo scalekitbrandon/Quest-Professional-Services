@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 6 200 194" role="img" aria-label="Quest Professional Services logo">
+<title>Quest Professional Services</title>
+<defs>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe36a"/><stop offset="1" stop-color="#f2b43a"/></linearGradient>
+<linearGradient id="left" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7cf45"/><stop offset=".55" stop-color="#f5c040"/><stop offset="1" stop-color="#e2672a"/></linearGradient>
+<linearGradient id="right" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e2672a"/><stop offset=".45" stop-color="#f3b13a"/><stop offset="1" stop-color="#f8d24b"/></linearGradient>
+</defs>
+<g stroke="#c8281f" stroke-width="2.5" stroke-linejoin="round">
+<polygon points="57.0,90.0 100.3,115.0 57.0,140.0 13.7,115.0" fill="url(#top)"/>
+<polygon points="13.7,115.0 57.0,140.0 57.0,190.0 13.7,165.0" fill="url(#left)"/>
+<polygon points="57.0,140.0 100.3,115.0 100.3,165.0 57.0,190.0" fill="url(#right)"/></g><text transform="translate(35.3,152.5) matrix(0.866,0.5,0,1,0,0)" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#2a1408">P</text><g stroke="#c8281f" stroke-width="2.5" stroke-linejoin="round">
+<polygon points="143.0,90.0 186.3,115.0 143.0,140.0 99.7,115.0" fill="url(#top)"/>
+<polygon points="99.7,115.0 143.0,140.0 143.0,190.0 99.7,165.0" fill="url(#left)"/>
+<polygon points="143.0,140.0 186.3,115.0 186.3,165.0 143.0,190.0" fill="url(#right)"/></g><text transform="translate(164.7,152.5) matrix(0.866,-0.5,0,1,0,0)" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#2a1408">S</text><g stroke="#c8281f" stroke-width="2.5" stroke-linejoin="round">
+<polygon points="100.0,15.0 143.3,40.0 100.0,65.0 56.7,40.0" fill="url(#top)"/>
+<polygon points="56.7,40.0 100.0,65.0 100.0,115.0 56.7,90.0" fill="url(#left)"/>
+<polygon points="100.0,65.0 143.3,40.0 143.3,90.0 100.0,115.0" fill="url(#right)"/></g><text transform="translate(78.3,77.5) matrix(0.866,0.5,0,1,0,0)" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#2a1408">Q</text>
+</svg>

@@ -1,0 +1,152 @@
+---
+// Town page "nearby communities" block: pill links to neighboring town pages
+// (reciprocal internal links) beside a map of the town.
+interface Props {
+  city: string;
+  mapQuery: string;
+  nearby: { label: string; href: string }[];
+  /** Parent area (e.g. the county) shown as a highlighted pill. */
+  parent?: { label: string; href: string };
+}
+
+const { city, mapQuery, nearby, parent } = Astro.props;
+const q = encodeURIComponent(mapQuery).replace(/%20/g, '+');
+const mapSrc = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${q}!6i12`;
+---
+
+<section class="nearby" aria-labelledby="nearby-heading">
+  <div class="nearby-inner">
+    <div class="copy">
+      <p class="eyebrow">Service Area</p>
+      <h2 id="nearby-heading">Proudly Serving {city} &amp; Nearby Communities</h2>
+      <p class="sub">
+        Our crews work in {city} every week, along with these neighboring communities. Relocation
+        between them? We handle that too.
+      </p>
+      <ul class="pills">
+        {parent && (
+          <li><a class="parent" href={parent.href}>All of {parent.label}</a></li>
+        )}
+        {nearby.map((n) => (
+          <li>
+            <a href={n.href}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" /></svg>
+              Relocation Services in {n.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="all" href="/service-areas/">View all service areas →</a>
+    </div>
+    <div class="map">
+      <iframe title={`Map of ${city}`} src={mapSrc} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .nearby {
+    padding: var(--space-8) max(16px, 5%);
+    background: var(--white);
+  }
+  .nearby-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-7);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  h2 {
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.1;
+    color: var(--black);
+    text-wrap: balance;
+  }
+  .sub {
+    margin: var(--space-3) 0 var(--space-5);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #5a5a5a;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 var(--space-4);
+    padding: 0;
+    list-style: none;
+  }
+  .pills a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 18px;
+    border: 2px solid var(--maroon);
+    border-radius: 999px;
+    color: var(--maroon);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pills a:hover {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  .pills .parent {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  .pills .parent:hover {
+    background: var(--maroon-dark);
+  }
+  .pills svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+  .all {
+    color: var(--maroon);
+    font-weight: 700;
+  }
+  .map {
+    aspect-ratio: 1.15;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.12);
+    background: var(--color-border);
+  }
+  .map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  @media (max-width: 960px) {
+    .nearby-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+    .map {
+      aspect-ratio: 1.4;
+    }
+  }
+  @media (max-width: 600px) {
+    .nearby {
+      padding-block: var(--space-7);
+    }
+    .pills a {
+      padding: 10px 14px;
+      font-size: 0.9375rem;
+    }
+  }
+</style>

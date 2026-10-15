@@ -1,0 +1,79 @@
+{
+  "title": "Relocation Services in Bowie, MD | Quest Professional Services",
+  "description": "Relocation services in Bowie, MD for Levitt-era homes, townhomes, and newer neighborhoods. Local and interstate, packing, and estate cleanouts. Free quote.",
+  "kicker": "Prince George's County Relocation Services",
+  "h1": "Relocation Services in Bowie, MD",
+  "intro": "Relocations across Bowie, from the original Belair-at-Bowie neighborhoods to newer communities off Route 197 and Route 301, handled by a Prince George's County crew with upfront pricing.",
+  "summary": "Relocations in the original Belair-at-Bowie neighborhoods, Old Town, and newer communities off Routes 197, 50, and 301.",
+  "why": {
+    "heading": "Why Bowie Residents Choose Quest",
+    "body": [
+      "Bowie is the largest city in Prince George's County, and its housing spans generations: the 1960s Levitt homes of Belair at Bowie, the historic streets of Old Town Bowie, and larger, newer subdivisions farther out.",
+      "Quest Professional Services relocates all of it. Older Bowie homes often have tighter doorways and stairs that call for careful furniture handling, while newer homes tend to be larger, with more rooms and more to pack.",
+      "Many long-time Bowie homeowners are now downsizing or passing homes to the next generation. We help with every step: sorting, packing, relocating what stays in the family, running an estate sale, and clearing what's left."
+    ]
+  },
+  "neighborhoods": [
+    "Belair at Bowie",
+    "Old Town Bowie",
+    "Route 197 (Collington Road) corridor",
+    "Bowie Town Center area",
+    "Route 3 / Route 301 area",
+    "Newer subdivisions throughout Bowie"
+  ],
+  "local": {
+    "heading": "Relocating in Bowie: What to Know",
+    "body": [
+      "Bowie sits between Route 50, Route 301, and Route 197, which makes it easy to reach and easy to leave, as long as you avoid peak traffic."
+    ],
+    "points": [
+      {
+        "title": "Older Homes, Tighter Spaces",
+        "text": "Levitt-era homes can have narrow halls and stairways. We pad, wrap, and disassemble furniture to protect walls and doorframes."
+      },
+      {
+        "title": "Route 50 Timing",
+        "text": "Route 50 gets heavy at rush hour. For relocations toward DC or Annapolis, we plan around it."
+      },
+      {
+        "title": "Downsizing Help",
+        "text": "We help long-time homeowners decide what to relocate, sell, or donate."
+      }
+    ]
+  },
+  "services": [
+    "local-relocation",
+    "long-distance-relocation",
+    "packing-unpacking",
+    "estate-cleanouts",
+    "storage-organization",
+    "office-relocation"
+  ],
+  "nearby": [
+    "upper-marlboro-md",
+    "washington-dc"
+  ],
+  "faqs": [
+    {
+      "q": "How much does a relocation cost in Bowie?",
+      "a": "Cost depends on your home size, how much you're relocating, stairs and access, distance, and packing. We give a free, upfront quote before relocation day."
+    },
+    {
+      "q": "Do you serve all of Bowie?",
+      "a": "Yes. We serve Belair at Bowie, Old Town Bowie, and the newer neighborhoods throughout the city."
+    },
+    {
+      "q": "Can you help us downsize from a family home?",
+      "a": "Yes. We help sort, pack, and relocate what you're keeping, and handle estate sales and removal for the rest."
+    },
+    {
+      "q": "Do you relocate businesses in Bowie?",
+      "a": "Yes. We handle office relocations and business relocations in Bowie and across the DC metro."
+    },
+    {
+      "q": "Can you relocate us out of state from Bowie?",
+      "a": "Yes. We relocate Bowie households to every state in the lower 48."
+    }
+  ],
+  "parent": "prince-georges-county-md"
+}

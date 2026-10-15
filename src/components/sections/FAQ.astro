@@ -1,0 +1,142 @@
+---
+// FAQ accordion + matching FAQPage JSON-LD. Visible Q&A and schema come from
+// the same array so they can never drift apart.
+interface Props {
+  heading: string;
+  intro?: string;
+  faqs: { q: string; a: string }[];
+}
+
+const { heading, intro, faqs } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<section class="faq" aria-labelledby="faq-heading">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <div class="faq-inner">
+    <header class="head">
+      <p class="eyebrow">FAQ</p>
+      <h2 id="faq-heading">{heading}</h2>
+      {intro && <p class="sub">{intro}</p>}
+    </header>
+    <div class="list">
+      {faqs.map((f, i) => (
+        <details open={i === 0}>
+          <summary>
+            <span>{f.q}</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+          </summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding: var(--space-8) max(16px, 5%);
+    background: var(--cream);
+  }
+  .faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .head {
+    margin-bottom: var(--space-6);
+    text-align: center;
+  }
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  h2 {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    line-height: 1.1;
+    color: var(--black);
+    text-wrap: balance;
+  }
+  .sub {
+    margin: var(--space-3) 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #5a5a5a;
+  }
+  .list {
+    display: grid;
+    gap: 12px;
+  }
+  details {
+    background: var(--white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  details[open] {
+    border-color: var(--gold);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.06);
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: 20px 24px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--black);
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary:hover {
+    color: var(--maroon);
+  }
+  summary svg {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--maroon);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    transition: transform 0.2s;
+  }
+  details[open] summary svg {
+    transform: rotate(45deg);
+  }
+  details p {
+    margin: 0;
+    padding: 0 24px 22px;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  @media (max-width: 600px) {
+    .faq {
+      padding-block: var(--space-7);
+    }
+    summary {
+      padding: 18px;
+      font-size: 1.0625rem;
+    }
+    details p {
+      padding: 0 18px 18px;
+    }
+  }
+</style>

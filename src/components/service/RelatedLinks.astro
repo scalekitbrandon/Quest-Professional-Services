@@ -1,0 +1,133 @@
+---
+// Internal-link block at the bottom of service pages: sibling services in the
+// same pillar, related services in other pillars, and the cities served.
+// Styled as real buttons (not plain text links) per the SEO page template.
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  serviceName: string;
+  siblings: Link[];
+  related: Link[];
+  areas: Link[];
+  pillarName: string;
+  pillarHref: string;
+  relatedHeading?: string;
+}
+
+const { serviceName, siblings, related, areas, pillarName, pillarHref, relatedHeading = 'Often Booked Together' } = Astro.props;
+---
+
+<section class="related" aria-labelledby="related-heading">
+  <div class="related-inner">
+    <h2 id="related-heading">More {pillarName} Services</h2>
+    <ul class="pills">
+      {siblings.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      <li><a class="all" href={pillarHref}>All {pillarName} Services</a></li>
+    </ul>
+
+    {related.length > 0 && (
+      <>
+        <h3>{relatedHeading}</h3>
+        <ul class="pills">
+          {related.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </>
+    )}
+
+    <h3>{serviceName} Near You</h3>
+    <ul class="pills areas">
+      {areas.map((l) => (
+        <li>
+          <a href={l.href}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" /></svg>
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .related {
+    padding: var(--space-7) max(16px, 5%);
+    background: var(--white);
+    border-top: 1px solid var(--color-border);
+  }
+  .related-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h2 {
+    margin-bottom: var(--space-4);
+    font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+    line-height: 1.15;
+    color: var(--black);
+  }
+  h3 {
+    margin: var(--space-5) 0 var(--space-3);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .pills a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 20px;
+    border: 2px solid var(--maroon);
+    border-radius: 999px;
+    color: var(--maroon);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pills a:hover {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  .pills .all {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  .pills .all:hover {
+    background: var(--maroon-dark);
+  }
+  .areas a {
+    border-color: var(--color-border);
+    background: var(--cream);
+    color: var(--black);
+  }
+  .areas a:hover {
+    border-color: var(--maroon);
+  }
+  .areas svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--maroon);
+  }
+  .areas a:hover svg {
+    fill: var(--gold-light);
+  }
+
+  @media (max-width: 600px) {
+    .pills a {
+      padding: 10px 16px;
+      font-size: 0.9375rem;
+    }
+  }
+</style>

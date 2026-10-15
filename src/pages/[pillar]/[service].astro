@@ -1,0 +1,98 @@
+---
+// Service page template — one page per entry in the `services` collection,
+// at /<pillar>/<service>/. Section order follows the astro-seo-architecture
+// per-page template: hero → what it is → who it's for → our approach →
+// process → reviews → FAQ (+schema) → related links → quote CTA.
+import { getCollection, type CollectionEntry } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import ServiceHero from '../../components/service/ServiceHero.astro';
+import ServiceOverview from '../../components/service/ServiceOverview.astro';
+import WhoItHelps from '../../components/service/WhoItHelps.astro';
+import ServiceApproach from '../../components/service/ServiceApproach.astro';
+import RelatedLinks from '../../components/service/RelatedLinks.astro';
+import HowItWorks from '../../components/sections/HowItWorks.astro';
+import Reviews from '../../components/sections/Reviews.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Credentials from '../../components/sections/Credentials.astro';
+import QuoteForm from '../../components/sections/QuoteForm.astro';
+import { site } from '../../data/site';
+import { heroImages, photoStrips } from '../../data/photos';
+import PhotoStrip from '../../components/sections/PhotoStrip.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((entry) => ({
+    params: { pillar: entry.data.pillar, service: entry.id },
+    props: { entry, all: services },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'services'>;
+  all: CollectionEntry<'services'>[];
+}
+
+const { entry, all } = Astro.props;
+const d = entry.data;
+const pillar = site.servicePillars.find((p) => p.slug === d.pillar)!;
+
+const href = (e: CollectionEntry<'services'>) => `/${e.data.pillar}/${e.id}/`;
+const label = (e: CollectionEntry<'services'>) =>
+  site.servicePillars.flatMap((p) => p.services).find((s) => s.slug === e.id)?.name ?? e.data.name;
+
+const siblings = all
+  .filter((e) => e.data.pillar === d.pillar && e.id !== entry.id)
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((e) => ({ label: label(e), href: href(e) }));
+const related = d.related
+  .map((slug) => all.find((e) => e.id === slug))
+  .filter((e): e is CollectionEntry<'services'> => Boolean(e))
+  .map((e) => ({ label: label(e), href: href(e) }));
+const areaVersions = await getCollection('areaServices', (e) => e.data.service === entry.id);
+const areas = site.serviceAreas.map((a) => ({
+  label: a.name,
+  href: areaVersions.some((v) => v.data.area === a.slug) ? `/service-areas/${a.slug}/${entry.id}/` : `/service-areas/${a.slug}/`,
+}));
+
+// Services where crossing state lines is the norm get the credentials band.
+const interstate = ['long-distance-relocation', 'business-relocation', 'freight-transport', 'event-transportation'].includes(entry.id);
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: pillar.name, href: `/${pillar.slug}/` },
+  { label: d.name, href: href(entry) },
+];
+const abs = (path: string) => new URL(path, Astro.site).toString();
+---
+
+<SiteLayout title={d.title} description={d.description}>
+  <BreadcrumbSchema items={crumbs.map((c) => ({ label: c.label, url: abs(c.href) }))} />
+  <ServiceSchema
+    name={d.name}
+    serviceType={d.serviceType}
+    description={d.description}
+    url={abs(href(entry))}
+    areaServed={site.serviceAreas.map((a) => a.name)}
+  />
+
+  <ServiceHero kicker={d.kicker} h1={d.h1} intro={d.intro} crumbs={crumbs} image={heroImages[href(entry)]} />
+  <ServiceOverview heading={d.overview.heading} body={d.overview.body} included={d.included} />
+  <WhoItHelps heading={d.whoFor.heading} intro={d.whoFor.intro} items={d.whoFor.items} />
+  {photoStrips[href(entry)] && <PhotoStrip {...photoStrips[href(entry)]} />}
+  <ServiceApproach heading={d.approach.heading} body={d.approach.body} points={d.approach.points} />
+  <HowItWorks variant={d.pillar === 'event-logistics' || entry.id === 'freight-transport' ? 'freight' : 'relocation'} />
+  <Reviews />
+  {interstate && <Credentials />}
+  <FAQ heading={`${d.name} FAQs`} faqs={d.faqs} />
+  <RelatedLinks
+    serviceName={d.name}
+    siblings={siblings}
+    related={related}
+    areas={areas}
+    pillarName={pillar.name}
+    pillarHref={`/${pillar.slug}/`}
+  />
+  <QuoteForm heading={`Get Your Free ${d.name} Quote`} />
+</SiteLayout>

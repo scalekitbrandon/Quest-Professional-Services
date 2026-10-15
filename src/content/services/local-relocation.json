@@ -1,0 +1,99 @@
+{
+  "pillar": "residential-relocation",
+  "order": 1,
+  "primaryKeyword": "local relocation services Washington DC",
+  "secondaryKeywords": [
+    "residential relocation Washington DC",
+    "apartment relocation DC",
+    "condo relocation Washington DC",
+    "local relocation Alexandria VA",
+    "relocation company DC metro"
+  ],
+  "title": "Local Relocation Services in Washington, DC | Quest Professional Services",
+  "description": "Local relocation services in Washington, DC for apartments, condos, rowhouses, and homes across the DC metro. Careful crews, upfront pricing. Free quote.",
+  "kicker": "Residential Relocation",
+  "h1": "Local Relocation Services in Washington, DC",
+  "intro": "Apartment, condo, rowhouse, and home relocations across Washington, DC, Alexandria, and the rest of the DC metro, handled by a careful crew with a clear, upfront price.",
+  "name": "Local Relocation",
+  "serviceType": "Local Relocation",
+  "icon": "home",
+  "overview": {
+    "heading": "What Is a Local Relocation?",
+    "body": [
+      "A local relocation is a relocation within the same metro area, usually under about 50 miles, such as Capitol Hill to Alexandria or the Navy Yard to Fort Washington. Because the drive is short, most local relocations are finished in a single day, and the work centers on careful loading, safe transport, and setting everything up at your new place.",
+      "Quest Professional Services handles local relocation for apartments, condos, rowhouses, townhomes, and houses throughout Washington, DC, Northern Virginia, and Maryland. Whether you're going across the street or across the Potomac, you get the same crew, the same care, and a price you know before relocation day."
+    ]
+  },
+  "included": [
+    "Furniture wrapping and padding",
+    "Disassembly and reassembly of beds, tables, and other furniture",
+    "Loading, transport, and unloading",
+    "Furniture placed in the rooms you choose",
+    "Optional packing and unpacking",
+    "Protection for floors, doorways, and banisters"
+  ],
+  "whoFor": {
+    "heading": "Local Relocation for Every Kind of Home",
+    "intro": "If you're relocating anywhere in the DC metro, we can help. Our local relocation customers include:",
+    "items": [
+      "Families relocating to a bigger (or smaller) house nearby",
+      "Renters relocating between apartments or condos",
+      "First-time buyers relocating into their first home",
+      "Seniors downsizing to a smaller place",
+      "Military and federal employees relocating within the DC metro",
+      "Anyone who needs a few large items relocated across town"
+    ]
+  },
+  "approach": {
+    "heading": "How We Handle Local Relocations in Washington, DC",
+    "body": [
+      "Local relocations in DC are about the details: rowhouse stairs, elevator reservations, loading docks, reserved street parking, and getting the truck unloaded before the day runs out. We plan for those things before we arrive, so relocation day goes quickly and nothing is left to guesswork.",
+      "We know the routes between DC, the Wilson Bridge, I-295, and the Beltway, and we schedule around traffic so your crew spends its time relocating your belongings, not sitting in it."
+    ],
+    "points": [
+      {
+        "title": "Upfront, Clear Pricing",
+        "text": "You get your quote before relocation day, with no surprise charges added at the end."
+      },
+      {
+        "title": "Protection for Your Things",
+        "text": "Furniture is wrapped and padded, and fragile items are handled with extra care from your old door to your new one."
+      },
+      {
+        "title": "One Crew, Start to Finish",
+        "text": "The same team that loads your truck unloads it and places your furniture where you want it."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does a local relocation cost in Washington, DC?",
+      "a": "The price of a local relocation depends on the size of your home, how much you're relocating, stairs or elevators, the distance between addresses, and whether you want packing help. We give every customer a free, upfront quote so you know the cost before relocation day."
+    },
+    {
+      "q": "How far in advance should I book my local relocation?",
+      "a": "The earlier the better, especially for weekends, the end of the month, and the summer, which are the busiest times to relocate. If your relocation is coming up soon, call us anyway; we'll do our best to fit you in."
+    },
+    {
+      "q": "Do you relocate apartments and condos?",
+      "a": "Yes. We relocate apartments, condos, townhomes, and single-family houses. Let us know about elevators, stairs, loading docks, or building rules when you request your quote so we can plan for them."
+    },
+    {
+      "q": "Which areas do you serve for local relocations?",
+      "a": "We serve Washington, DC and Alexandria, VA, plus Prince George's County, Maryland, including Fort Washington, National Harbor, Accokeek, Upper Marlboro, and Bowie, and Waldorf. If you don't see your area, give us a call."
+    },
+    {
+      "q": "Can you pack for me, too?",
+      "a": "Yes. We offer full packing, partial packing for things like kitchens and fragile items, and unpacking at your new home. Just add it to your quote request."
+    },
+    {
+      "q": "What if I'm relocating out of state instead?",
+      "a": "We also handle long-distance and interstate relocations to every state in the lower 48. See our long-distance relocation page or request a quote and we'll plan it with you."
+    }
+  ],
+  "related": [
+    "packing-unpacking",
+    "estate-cleanouts",
+    "long-distance-relocation"
+  ]
+}

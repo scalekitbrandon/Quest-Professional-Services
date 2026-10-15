@@ -1,0 +1,95 @@
+{
+  "pillar": "event-logistics",
+  "order": 2,
+  "primaryKeyword": "event setup services Washington DC",
+  "secondaryKeywords": [
+    "event setup and breakdown crew DC",
+    "event support services Washington DC",
+    "event load in and load out DC",
+    "event furniture setup National Harbor",
+    "event labor Alexandria VA"
+  ],
+  "title": "Event Setup & Support in Washington, DC | Quest Professional Services",
+  "description": "Event setup and support in Washington, DC: load-in, setup, breakdown, and packing for conferences, galas, and events of every size. Free quote.",
+  "kicker": "Event Logistics",
+  "h1": "Event Setup & Support Services in Washington, DC",
+  "intro": "Extra hands for your event. We load in, set up, break down, and pack up furniture, equipment, and decor for events across Washington, DC, National Harbor, Alexandria, and the DC metro.",
+  "name": "Event Setup & Support",
+  "serviceType": "Event setup and support",
+  "icon": "event",
+  "overview": {
+    "heading": "What Is Event Setup & Support?",
+    "body": [
+      "Event support is the hands-on work behind an event: picking up and transporting tables, chairs, staging, decor, and equipment; loading it in; setting it up to your layout; and then breaking it all down, packing it, and hauling it out when the event ends.",
+      "Quest Professional Services brings a relocation crew's experience to events, so heavy items get where they need to go safely and on schedule. We work with planners, venues, churches, schools, and businesses throughout the DC metro."
+    ]
+  },
+  "included": [
+    "Pickup and transport of event furniture and equipment",
+    "Load-in and setup to your floor plan",
+    "Breakdown and load-out after the event",
+    "Packing and unpacking of decor and supplies",
+    "Early-morning and late-night scheduling",
+    "Return delivery to storage or your business"
+  ],
+  "whoFor": {
+    "heading": "Who We Support",
+    "intro": "Any event that needs heavy lifting on a tight schedule. We help:",
+    "items": [
+      "Event planners and coordinators",
+      "Churches and community organizations",
+      "Schools and booster clubs",
+      "Businesses hosting conferences and company events",
+      "Families hosting weddings, reunions, and celebrations",
+      "Vendors who need help getting set up at a venue"
+    ]
+  },
+  "approach": {
+    "heading": "How We Support Your Event",
+    "body": [
+      "Events run on timing. We confirm the load-in window, your layout, and the end time ahead of the day, then show up with the crew and truck size the job needs.",
+      "After the event, we break down and pack everything carefully so it's ready for next time, and return it wherever it belongs."
+    ],
+    "points": [
+      {
+        "title": "On Your Timeline",
+        "text": "Early load-ins and late breakdowns, scheduled around the venue."
+      },
+      {
+        "title": "Set to Your Layout",
+        "text": "Share a floor plan and we'll set up to match it."
+      },
+      {
+        "title": "Packed for Next Time",
+        "text": "Breakdown and packing done carefully, not just thrown on a truck."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does event setup help cost?",
+      "a": "It depends on the size of the event, how much needs to be relocated, the venue, and the hours involved. We'll give you a free, upfront quote once we know the details."
+    },
+    {
+      "q": "Do you rent tables, chairs, or tents?",
+      "a": "Our service is the labor and transport: relocation, setting up, and breaking down the items you own or have rented. Call us to talk through your event."
+    },
+    {
+      "q": "Can you work early mornings or late nights?",
+      "a": "Yes. Event load-ins and breakdowns often happen outside normal hours, and we schedule around the venue."
+    },
+    {
+      "q": "Do you support events in DC, National Harbor, and Alexandria?",
+      "a": "Yes. We support events throughout Washington, DC, National Harbor, Alexandria, Northern Virginia, and Prince George's County."
+    },
+    {
+      "q": "Can you store or deliver items after the event?",
+      "a": "We can deliver items back to your business, home, or storage unit after the event. See our pickup and delivery page for more."
+    }
+  ],
+  "related": [
+    "event-transportation",
+    "pickup-delivery",
+    "commercial-packing"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Relocation Services in Prince George's County, MD | Quest Professional Services",
+  "description": "Relocation services across Prince George's County, MD from our Fort Washington base: local and long-distance relocations, packing, and estate work.",
+  "kicker": "Our Home County",
+  "h1": "Relocation Services in Prince George's County, MD",
+  "intro": "From Fort Washington and National Harbor to Bowie and Upper Marlboro, we handle relocations, packing, estate cleanouts, and event logistics across Prince George's County.",
+  "summary": "Our home county, from the inner-Beltway communities near DC to Bowie, Upper Marlboro, and rural Accokeek.",
+  "why": {
+    "heading": "Why Prince George's County Families & Businesses Choose Quest",
+    "body": [
+      "Prince George's County is home. Quest Professional Services is based on Swan Creek Road in Fort Washington, so crews reach most of the county quickly, without long travel time built into your quote.",
+      "The county is big and varied: waterfront high-rise living at National Harbor, established neighborhoods in Fort Washington and Bowie, newer subdivisions around Upper Marlboro, and wooded acreage in Accokeek. Each one calls for a different plan, and we plan for it.",
+      "We also help a lot of military and federal families near Joint Base Andrews, and families settling an estate through the county seat in Upper Marlboro."
+    ]
+  },
+  "neighborhoods": [
+    "Fort Washington",
+    "National Harbor",
+    "Accokeek",
+    "Upper Marlboro",
+    "Bowie"
+  ],
+  "local": {
+    "heading": "Relocating in Prince George's County: What to Know",
+    "body": [
+      "The county covers a lot of ground, so we plan routes and timing for each part of it."
+    ],
+    "points": [
+      {
+        "title": "Beltway & Corridor Timing",
+        "text": "I-495, Indian Head Highway, Branch Avenue, Route 301, and Route 50 all back up at rush hour. We schedule drive times around them."
+      },
+      {
+        "title": "High-Rises to Acreage",
+        "text": "From National Harbor elevator reservations to long Accokeek driveways, we match the crew and truck to the property."
+      },
+      {
+        "title": "Military & Federal Relocations",
+        "text": "Orders near Joint Base Andrews often come on short notice. Call as soon as you have dates and we'll work to fit you in."
+      }
+    ]
+  },
+  "services": [
+    "local-relocation",
+    "long-distance-relocation",
+    "packing-unpacking",
+    "estate-cleanouts",
+    "office-relocation",
+    "event-setup"
+  ],
+  "nearby": [
+    "fort-washington-md",
+    "national-harbor-md",
+    "accokeek-md",
+    "upper-marlboro-md",
+    "bowie-md"
+  ],
+  "faqs": [
+    {
+      "q": "Which parts of Prince George's County do you serve?",
+      "a": "All of it, including Fort Washington, National Harbor, Accokeek, Upper Marlboro, and Bowie. Call us if you don't see your community."
+    },
+    {
+      "q": "How much does a relocation in Prince George's County cost?",
+      "a": "It depends on your home size, how much you're relocating, stairs and access, distance, and packing. We give a free, upfront quote before relocation day."
+    },
+    {
+      "q": "Can you relocate me from Prince George's County to DC or Virginia?",
+      "a": "Yes. Relocations between Prince George's County, Washington, DC, and Alexandria are some of our most common jobs."
+    },
+    {
+      "q": "Do you help military families near Joint Base Andrews?",
+      "a": "Yes. We relocate military and federal families locally and to every state in the lower 48."
+    },
+    {
+      "q": "Do you handle estate cleanouts in Prince George's County?",
+      "a": "Yes. We handle clean up, organization, estate sales, and the final cleanout, and can work around probate timelines and listing dates."
+    }
+  ]
+}

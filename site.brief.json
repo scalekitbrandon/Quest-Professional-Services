@@ -1,0 +1,38 @@
+{
+  "slug": "quest-pro-moving",
+  "business": {
+    "legalName": "Quest Professional Services",
+    "name": "Quest Professional Services",
+    "industry": "Moving, logistics, cleanouts & estate services",
+    "audience": "Residential and commercial customers — Fort Washington, MD / DC metro, plus interstate (lower 48)",
+    "phone": "(240) 886-9044",
+    "email": "info@questprofessionalllc.com",
+    "emailNote": "Client gave 'info@questprofessionalllc' with no TLD — .com assumed, CONFIRM before launch",
+    "address": {
+      "street": "938 E Swan Creek Rd #224",
+      "city": "Fort Washington",
+      "region": "MD",
+      "postalCode": "20744"
+    }
+  },
+  "serviceCategories": [
+    { "name": "Relocation", "items": ["Local moving", "Interstate moving", "Residential moving", "Commercial moving"] },
+    { "name": "Logistics & Transport", "items": ["General freight transport", "Pickup and delivery", "Coverage across the U.S. excluding Alaska and Hawaii"] },
+    { "name": "Cleanouts & Estates", "items": ["Bulk item removal", "Disposal", "Storage organization", "Estate liquidation (clean up, organization, estate sales)"] },
+    { "name": "Event Support", "items": ["Event setup", "Packing and unpacking services"] }
+  ],
+  "pages": ["Home", "Services", "Service Areas", "About", "Reviews", "Contact/Get a Quote"],
+  "referenceSite": {
+    "used": true,
+    "url": "",
+    "notes": "Brandon is supplying the reference section-by-section; build each section as it arrives. Structure only — no reference colors/fonts/copy."
+  },
+  "brand": {
+    "hasExistingAssets": true,
+    "assets": ["Logo file (pending — path TBD)", "Color direction: maroon, gold, black, white (exact hexes not supplied — starter palette in tokens.css)"]
+  },
+  "serviceAreas": "Client has a city list — pending from Brandon",
+  "interactivity": ["Quote request / contact form"],
+  "hosting": "Cloudflare Pages (standard client deploy SOP)",
+  "devPort": 4324
+}

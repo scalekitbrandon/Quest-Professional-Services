@@ -1,0 +1,550 @@
+---
+// Quest Professional Services header: dark utility bar (call / email / socials) + white main bar
+// (logo, nav with dropdowns, support phone block, quote CTA). Structure follows
+// the reference supplied by Brandon; colors/copy are Quest's own.
+import { site } from '../data/site';
+
+interface NavItem {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+}
+
+const nav: NavItem[] = [
+  ...site.servicePillars.map((p) => ({
+    label: p.short,
+    href: `/${p.slug}/`,
+    children: [
+      { label: `All ${p.name} Services`, href: `/${p.slug}/` },
+      ...p.services.map((s) => ({ label: s.name, href: `/${p.slug}/${s.slug}/` })),
+    ],
+  })),
+  {
+    label: 'Service Areas',
+    href: '/service-areas/',
+    children: [
+      ...site.serviceAreas.map((a) => ({ label: a.name, href: `/service-areas/${a.slug}/` })),
+      { label: 'All Service Areas', href: '/service-areas/' },
+    ],
+  },
+  { label: 'About', href: '/about/' },
+];
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+const socials = site.social.filter((s) => s.href);
+---
+
+<header class="site-header">
+  <div class="topbar">
+    <div class="container header-wide topbar-inner">
+      <div class="topbar-contact">
+        <a href={site.phoneHref}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Call: {site.phone}
+        </a>
+        <a href={`mailto:${site.email}`} class="topbar-email">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="outline"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email: {site.email}
+        </a>
+      </div>
+      {socials.length > 0 && (
+        <ul class="topbar-social">
+          {socials.map((s) => (
+            <li>
+              <a href={s.href} aria-label={s.label} target="_blank" rel="noopener">
+                {s.label === 'Facebook' && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>}
+                {s.label === 'Instagram' && <svg viewBox="0 0 24 24" aria-hidden="true" class="outline"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>}
+                {s.label === 'X' && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2.25h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.25h7l4.8 6.4zm-1.2 18h1.9L7.1 4.1H5.1z"/></svg>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+
+  <div class="mainbar">
+    <div class="container header-wide mainbar-inner">
+      <a class="brand" href="/" aria-label={`${site.name} home`}>
+        <img src="/logo-qps.svg" alt="" width="56" height="54" />
+        <span class="brand-text">
+          <span class="brand-name">Quest Professional</span>
+          <span class="brand-sub">Services</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          {nav.map((item) => (
+            <li class:list={['nav-item', { 'has-children': item.children }]}>
+              {item.children ? (
+                <>
+                  <button class:list={['nav-link', 'dropdown-toggle', { active: isActive(item.href) }]} aria-expanded="false">
+                    {item.label}
+                    <svg class="caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6z"/></svg>
+                  </button>
+                  <ul class="dropdown">
+                    {item.children.map((c) => (
+                      <li><a href={c.href}>{c.label}</a></li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <a class:list={['nav-link', { active: isActive(item.href) }]} href={item.href}>{item.label}</a>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <div class="nav-actions">
+          <a class="support" href={site.phoneHref}>
+            <span class="support-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            </span>
+            <span class="support-text">
+              <span class="support-label">Customer Support</span>
+              <span class="support-phone">{site.phone}</span>
+            </span>
+          </a>
+          <a class="quote-btn" href="#quote">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = header?.querySelector<HTMLButtonElement>('.menu-toggle');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    header?.classList.toggle('menu-open', open);
+  });
+
+  header?.querySelectorAll<HTMLButtonElement>('.dropdown-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      header.querySelectorAll('.dropdown-toggle').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!header?.contains(e.target as Node)) {
+      header?.querySelectorAll('.dropdown-toggle').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      header?.querySelectorAll('.dropdown-toggle').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 50;
+  }
+  svg {
+    fill: currentColor;
+  }
+  svg.outline {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Header runs wider than the page container: 5% gutter each side */
+  .header-wide {
+    max-width: none;
+    padding-inline: max(16px, 5%);
+  }
+
+  /* ---------- Top utility bar ---------- */
+  .topbar {
+    background: var(--charcoal);
+    color: var(--white);
+    font-size: 0.875rem;
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+  }
+  .topbar-contact {
+    display: flex;
+    gap: var(--space-5);
+  }
+  .topbar a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: inherit;
+    text-decoration: none;
+  }
+  .topbar a:hover {
+    color: var(--gold-light);
+  }
+  .topbar svg {
+    width: 16px;
+    height: 16px;
+    color: var(--gold);
+  }
+  .topbar-social {
+    display: flex;
+    gap: var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .topbar-social svg {
+    width: 18px;
+    height: 18px;
+    color: var(--white);
+  }
+
+  /* ---------- Main bar ---------- */
+  .mainbar {
+    background: var(--white);
+    border-bottom: 3px solid var(--maroon);
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.06);
+  }
+  .mainbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    height: 88px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .brand img {
+    height: 54px;
+    width: auto;
+  }
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .brand-name {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    font-size: 1.625rem;
+    letter-spacing: 0.01em;
+    color: var(--maroon);
+    text-transform: uppercase;
+  }
+  .brand-sub {
+    margin-top: 4px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+  }
+
+  .primary-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+  }
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--maroon);
+  }
+  .caret {
+    flex-shrink: 0;
+    width: 9px;
+    height: 6px;
+    transition: transform 0.2s;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: -12px;
+    min-width: 280px;
+    list-style: none;
+    margin: 0;
+    padding: var(--space-2) 0;
+    background: var(--white);
+    border-top: 3px solid var(--gold);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 0.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+  }
+  /* hover bridge so the menu doesn't close crossing the gap */
+  .dropdown::before {
+    content: '';
+    position: absolute;
+    inset: -17px 0 auto 0;
+    height: 17px;
+  }
+  .dropdown a {
+    display: block;
+    padding: 10px 18px;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+  .dropdown a:hover {
+    background: var(--cream);
+    color: var(--maroon);
+  }
+  .has-children:hover .dropdown,
+  .has-children:focus-within .dropdown,
+  .dropdown-toggle[aria-expanded='true'] + .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .has-children:hover .caret,
+  .dropdown-toggle[aria-expanded='true'] .caret {
+    transform: rotate(180deg);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .support {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .support-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--gold);
+    color: var(--maroon-dark);
+  }
+  .support-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .support-text {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+  .support-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--black);
+  }
+  .support-phone {
+    font-size: 1.125rem;
+    color: #555;
+  }
+  .support:hover .support-phone {
+    color: var(--maroon);
+  }
+
+  .quote-btn {
+    padding: 14px 26px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--maroon-light), var(--maroon-dark));
+    color: var(--white);
+    font-weight: var(--font-weight-button);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: filter 0.2s;
+  }
+  .quote-btn:hover {
+    filter: brightness(1.15);
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Hide the support block before things get tight */
+  @media (max-width: 1800px) {
+    .support {
+      display: none;
+    }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 1500px) {
+    .topbar-email {
+      display: none !important;
+    }
+    .mainbar-inner {
+      height: 72px;
+    }
+    .brand img {
+      height: 44px;
+    }
+    .brand-name {
+      font-size: 1.25rem;
+    }
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      background: var(--maroon);
+      border: 0;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 2px;
+      background: var(--white);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .menu-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+    .menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .primary-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: var(--space-3) var(--space-4) var(--space-4);
+      background: var(--white);
+      border-bottom: 3px solid var(--maroon);
+      box-shadow: 0 12px 24px rgb(0 0 0 / 0.12);
+      max-height: calc(100vh - 112px);
+      overflow-y: auto;
+    }
+    .menu-open .primary-nav {
+      display: flex;
+    }
+    .nav-list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .nav-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-link {
+      width: 100%;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+    .dropdown,
+    .has-children:hover .dropdown,
+    .has-children:focus-within .dropdown {
+      position: static;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border-top: 0;
+      padding: 0 0 var(--space-2);
+    }
+    .dropdown::before {
+      display: none;
+    }
+    .dropdown-toggle[aria-expanded='true'] + .dropdown {
+      display: block;
+    }
+    .has-children:hover .caret {
+      transform: none;
+    }
+    .dropdown-toggle[aria-expanded='true'] .caret {
+      transform: rotate(180deg);
+    }
+    .dropdown a {
+      padding-left: var(--space-3);
+    }
+    .nav-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+    .support {
+      display: flex;
+    }
+    .quote-btn {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .topbar-inner {
+      justify-content: center;
+    }
+    .topbar-social {
+      display: none;
+    }
+    .brand-sub {
+      letter-spacing: 0.16em;
+    }
+  }
+</style>

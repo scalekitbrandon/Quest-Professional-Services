@@ -1,0 +1,78 @@
+---
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  logoText?: string;
+  /** Optional logo image; logoText becomes its alt text. */
+  logoSrc?: string;
+  links?: NavLink[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const { logoText = 'Logo', logoSrc, links = [], ctaLabel, ctaHref } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/">
+      {logoSrc ? <img src={logoSrc} alt={logoText} height="48" /> : logoText}
+    </a>
+    <nav>
+      <ul>
+        {links.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    {ctaLabel && ctaHref && (
+      <a class="header-cta" href={ctaHref}>{ctaLabel}</a>
+    )}
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .logo {
+    font-weight: var(--font-weight-max);
+    color: var(--color-fg);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+  }
+  nav ul {
+    display: flex;
+    gap: var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    color: var(--color-fg);
+    text-decoration: none;
+  }
+  .header-cta {
+    padding: 10px 22px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary);
+    color: var(--color-primary-fg);
+    font-weight: var(--font-weight-button);
+    text-decoration: none;
+  }
+</style>

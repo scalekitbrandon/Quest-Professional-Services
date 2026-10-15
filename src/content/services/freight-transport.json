@@ -1,0 +1,99 @@
+{
+  "pillar": "specialty-services",
+  "order": 1,
+  "primaryKeyword": "freight transport services Washington DC",
+  "secondaryKeywords": [
+    "freight transportation company DC",
+    "general freight hauling DC metro",
+    "freight delivery Northern Virginia",
+    "local and long distance freight Maryland",
+    "freight carrier Washington DC"
+  ],
+  "title": "Freight Transport Services in Washington, DC | Quest Professional Services",
+  "description": "Freight transport in Washington, DC. Local and long-distance general freight across the lower 48 for businesses that need reliable hauling.",
+  "kicker": "Specialty Services",
+  "h1": "Freight Transport Services in Washington, DC",
+  "intro": "Reliable local and long-distance freight hauling from the DC metro to anywhere in the lower 48. We transport general freight for businesses that need it picked up on time and delivered in one piece.",
+  "name": "Freight Transport",
+  "serviceType": "Freight transport",
+  "icon": "truck",
+  "overview": {
+    "heading": "What Is General Freight Transport?",
+    "body": [
+      "General freight transport is the hauling of goods and materials for businesses: palletized loads, equipment, furniture, fixtures, and supplies shipped from a supplier, warehouse, or business to where they're needed. It covers both local runs around the DC metro and long-distance loads to other states.",
+      "Quest Professional Services provides freight transport from our base just outside DC in Fort Washington, MD to all states in the continental U.S. (excluding Alaska and Hawaii). We handle the loading, transport, and delivery, and keep you informed along the way."
+    ]
+  },
+  "included": [
+    "Local freight runs around the DC metro",
+    "Long-distance freight to all lower 48 states",
+    "Equipment, furniture, fixtures, and supplies",
+    "Careful loading and securement",
+    "Business-to-business deliveries",
+    "Clear upfront pricing"
+  ],
+  "whoFor": {
+    "heading": "Who Uses Our Freight Service",
+    "intro": "Our logistics customers are usually businesses that need dependable hauling without a long-term contract:",
+    "items": [
+      "Retailers relocating stock between locations",
+      "Contractors and builders relocating materials and equipment",
+      "Manufacturers and suppliers shipping to customers",
+      "Furniture and fixture dealers",
+      "Event and trade show companies",
+      "Businesses relocating equipment to a new state"
+    ]
+  },
+  "approach": {
+    "heading": "How We Handle Your Freight",
+    "body": [
+      "Tell us what's being relocated, where it's going, and when it needs to arrive. We'll confirm the pickup, give you an upfront price, and plan the route.",
+      "At pickup, freight is loaded and secured to prevent shifting in transit. At delivery, we unload where you need it, not just at the curb when you've arranged otherwise."
+    ],
+    "points": [
+      {
+        "title": "Lower 48 Coverage",
+        "text": "Local runs and long hauls to every state except Alaska and Hawaii."
+      },
+      {
+        "title": "Loaded Right",
+        "text": "A relocation company's care in securing freight so it arrives intact."
+      },
+      {
+        "title": "Straight Answers",
+        "text": "Upfront pricing and clear communication from pickup to delivery."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does freight transport cost?",
+      "a": "Freight pricing depends on the size and weight of the load, the distance, and your timing. Request a free quote with the details and we'll give you an upfront price."
+    },
+    {
+      "q": "Are you authorized to haul freight across state lines?",
+      "a": "Yes. We're U.S. Department of Transportation (DOT) and Motor Carrier (MC) certified (USDOT #3698493, MC #1293117), the federal operating authority for interstate trucking, and we're licensed and insured."
+    },
+    {
+      "q": "Where do you deliver freight?",
+      "a": "We haul freight locally around Maryland, DC, and Virginia, and long-distance to every state in the lower 48. We do not serve Alaska or Hawaii."
+    },
+    {
+      "q": "What kinds of freight do you transport?",
+      "a": "We transport general freight, including equipment, furniture, fixtures, supplies, and palletized goods. Call us about hazardous, oversized, or temperature-controlled loads."
+    },
+    {
+      "q": "Do you do one-time loads, or only contracts?",
+      "a": "We handle one-time loads as well as recurring work. Tell us what you need and we'll set it up."
+    },
+    {
+      "q": "Do you also do smaller pickups and deliveries?",
+      "a": "Yes. For single items and smaller loads, see our pickup and delivery services page."
+    }
+  ],
+  "related": [
+    "event-transportation",
+    "business-relocation",
+    "long-distance-relocation"
+  ]
+}

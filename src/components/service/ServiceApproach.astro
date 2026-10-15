@@ -1,0 +1,112 @@
+---
+// "Our approach" — how Quest does this service, plus 3 differentiator cards.
+interface Props {
+  heading: string;
+  body: string[];
+  points: { title: string; text: string }[];
+  eyebrow?: string;
+}
+
+const { heading, body, points, eyebrow = 'Our Approach' } = Astro.props;
+---
+
+<section class="approach" aria-labelledby="approach-heading">
+  <div class="approach-inner">
+    <div class="copy">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id="approach-heading">{heading}</h2>
+      {body.map((p) => <p class="body">{p}</p>)}
+    </div>
+    <ol class="points">
+      {points.map((pt, i) => (
+        <li>
+          <span class="num">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{pt.title}</h3>
+            <p>{pt.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .approach {
+    padding: var(--space-8) max(16px, 5%);
+    background: var(--white);
+  }
+  .approach-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-7);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  h2 {
+    margin-bottom: var(--space-4);
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.1;
+    color: var(--black);
+    text-wrap: balance;
+  }
+  .body {
+    margin: 0 0 var(--space-3);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #444;
+  }
+  .points {
+    display: grid;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .points li {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--maroon);
+    border-radius: var(--radius-md);
+    color: var(--white);
+  }
+  .num {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    line-height: 1;
+    color: var(--gold);
+  }
+  h3 {
+    font-size: 1.375rem;
+    line-height: 1.2;
+  }
+  .points p {
+    margin: 6px 0 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgb(255 255 255 / 0.88);
+  }
+
+  @media (max-width: 960px) {
+    .approach-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+  }
+  @media (max-width: 600px) {
+    .approach {
+      padding-block: var(--space-7);
+    }
+  }
+</style>

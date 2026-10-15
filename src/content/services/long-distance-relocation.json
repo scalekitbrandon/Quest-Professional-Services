@@ -1,0 +1,103 @@
+{
+  "pillar": "residential-relocation",
+  "order": 2,
+  "primaryKeyword": "long distance relocation services Washington DC",
+  "secondaryKeywords": [
+    "interstate relocation company DC",
+    "long distance relocation Northern Virginia",
+    "out of state relocation Washington DC",
+    "cross country relocation DC metro",
+    "interstate relocation Maryland"
+  ],
+  "title": "Long-Distance & Interstate Relocation in Washington, DC | Quest Professional Services",
+  "description": "Long-distance and interstate relocation from Washington, DC, Northern Virginia, and Maryland to anywhere in the lower 48. Planned around your dates.",
+  "kicker": "Residential Relocation",
+  "h1": "Long-Distance & Interstate Relocation Services in Washington, DC",
+  "intro": "Relocating out of state? We relocate households from Washington, DC, Northern Virginia, and Maryland to any state in the lower 48, planned around your dates and priced upfront.",
+  "name": "Long-Distance Relocation",
+  "serviceType": "Long-distance Relocation",
+  "icon": "route",
+  "overview": {
+    "heading": "What Is a Long-Distance Relocation?",
+    "body": [
+      "A long-distance relocation generally means a relocation of more than about 100 miles, and an interstate relocation is any relocation that crosses a state line, like Washington, DC to North Carolina, Texas, or California. These relocations take more planning than a local relocation: scheduling pickup and delivery windows, protecting belongings for a long ride, and coordinating timing on both ends.",
+      "Quest Professional Services handles long-distance and interstate relocations from Maryland, Washington, DC, and Northern Virginia to every state in the continental U.S. (we don't serve Alaska or Hawaii). You get one point of contact, a clear plan, and an upfront quote before anything is loaded."
+    ]
+  },
+  "included": [
+    "Relocation plan with pickup and delivery windows",
+    "Furniture wrapping, padding, and secure loading",
+    "Disassembly and reassembly",
+    "Full or partial packing (optional)",
+    "Delivery and placement at your new home",
+    "Relocations to all lower 48 states"
+  ],
+  "whoFor": {
+    "heading": "Who Books a Long-Distance Relocation With Us",
+    "intro": "We plan interstate relocations for people leaving the DC area for every kind of reason:",
+    "items": [
+      "Families relocating for a new job",
+      "Military and federal employees on new orders",
+      "Retirees relocating closer to family or somewhere warmer",
+      "Students and young professionals heading to a new city",
+      "Homeowners who have sold and need everything relocated at once",
+      "Anyone relocating into the DC area from another state"
+    ]
+  },
+  "approach": {
+    "heading": "How We Plan an Interstate Relocation",
+    "body": [
+      "A smooth long-distance relocation is mostly won before relocation day. We start by walking through what you're relocating, your timeline, and anything that needs special handling. Then we build a plan with your pickup date, a delivery window, and everything you need to know in between.",
+      "On the day, your belongings are wrapped and loaded for the long haul, not just a trip across town. At the other end we unload, set up furniture, and make sure you're settled before we leave."
+    ],
+    "points": [
+      {
+        "title": "A Plan You Can See",
+        "text": "Pickup date, delivery window, and what to expect at each step, set before you commit."
+      },
+      {
+        "title": "Packed for the Long Haul",
+        "text": "Extra padding and secure loading keep furniture from shifting over hundreds of miles."
+      },
+      {
+        "title": "No Surprise Charges",
+        "text": "Your upfront quote is the number you plan around, not a starting point."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does a long-distance relocation from Maryland cost?",
+      "a": "Long-distance pricing depends mainly on how much you're relocating, the distance, your dates, and any packing or special handling. We don't quote a one-size-fits-all number; request a free quote and we'll give you an upfront price for your specific relocation."
+    },
+    {
+      "q": "Are you licensed for interstate relocations?",
+      "a": "Yes. Quest Professional Services is U.S. Department of Transportation (DOT) and Motor Carrier (MC) certified (USDOT #3698493, MC #1293117), the federal operating authority for transportation across state lines. We're also licensed and insured."
+    },
+    {
+      "q": "Which states do you relocate to?",
+      "a": "We relocate to and from all states in the lower 48. We do not serve Alaska or Hawaii."
+    },
+    {
+      "q": "How long does an interstate relocation take?",
+      "a": "It depends on the distance and the size of the relocation. When you book, we'll give you a pickup date and a delivery window so you can plan your travel and your first nights in the new home."
+    },
+    {
+      "q": "How far ahead should I book a long-distance relocation?",
+      "a": "As early as you can. Summer and month-end dates fill up first. Booking early gives you the best choice of dates and more time to plan packing."
+    },
+    {
+      "q": "Can you pack my whole house for a long-distance relocation?",
+      "a": "Yes. We offer full-service packing, partial packing for fragile rooms like the kitchen, and unpacking at your new home. Long-distance relocations especially benefit from professional packing."
+    },
+    {
+      "q": "Do you also relocate businesses out of state?",
+      "a": "Yes. We handle interstate business relocations too. See our business relocation page or mention it in your quote request."
+    }
+  ],
+  "related": [
+    "packing-unpacking",
+    "business-relocation",
+    "freight-transport"
+  ]
+}

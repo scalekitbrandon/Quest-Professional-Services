@@ -1,0 +1,45 @@
+---
+// Shared GoHighLevel quote form embed ("Quest Professional - Website Form",
+// id 4JNqjaJ1zjAqSjhUPtz6). It's the only lead form on the site and appears
+// in the quote section of every page — reuse this component, don't create a
+// second GHL form.
+//
+// Height is intentionally NOT fixed here. GHL's form_embed.js resizes the
+// iframe itself to match the form's real height once it loads; a fixed-height
+// wrapper would leave dead space whenever the form changes in the GHL builder.
+interface Props {
+  /** Starting height before GHL's resize script runs (matches the form's data-height). */
+  initialHeight?: number;
+}
+
+const { initialHeight = 613 } = Astro.props;
+---
+
+<div class="ghl-form-embed">
+  <iframe
+    src="https://api.leadconnectorhq.com/widget/form/4JNqjaJ1zjAqSjhUPtz6"
+    style={`width:100%;height:${initialHeight}px;border:none;border-radius:8px;display:block`}
+    id="inline-4JNqjaJ1zjAqSjhUPtz6"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Quest Professional - Website Form"
+    data-height={initialHeight}
+    data-layout-iframe-id="inline-4JNqjaJ1zjAqSjhUPtz6"
+    data-form-id="4JNqjaJ1zjAqSjhUPtz6"
+    data-cookie-consent="true"
+    data-cookie-consent-provider="auto"
+    title="Quest Professional - Website Form"
+  ></iframe>
+</div>
+<script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+<style>
+  .ghl-form-embed {
+    width: 100%;
+  }
+</style>

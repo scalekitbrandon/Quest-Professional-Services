@@ -1,0 +1,193 @@
+---
+// Service Areas hub — /service-areas/. Directory of every town page plus the
+// office map. Targets the broad regional term; town pages target each town.
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import ServiceHero from '../../components/service/ServiceHero.astro';
+import ServiceAreas from '../../components/sections/ServiceAreas.astro';
+import HowItWorks from '../../components/sections/HowItWorks.astro';
+import Reviews from '../../components/sections/Reviews.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import QuoteForm from '../../components/sections/QuoteForm.astro';
+import { site } from '../../data/site';
+import { heroImages } from '../../data/photos';
+
+const entries = await getCollection('areas');
+// Only towns with a written page get a card; order follows site.serviceAreas.
+const towns = site.serviceAreas
+  .map((a) => ({ ...a, entry: entries.find((e) => e.id === a.slug) }))
+  .filter((a) => a.entry)
+  .map((a) => ({ slug: a.slug, name: a.name, href: `/service-areas/${a.slug}/`, summary: a.entry!.data.summary }));
+
+// Tiers mirror the SEO plan: primary markets first, then home base, then the rest.
+const tiers = [
+  { heading: 'Primary Markets', slugs: ['washington-dc', 'alexandria-va'] },
+  { heading: 'Our Home Base', slugs: ['fort-washington-md', 'prince-georges-county-md'] },
+];
+const tiered = tiers.flatMap((t) => t.slugs);
+const groups = [
+  ...tiers.map((t) => ({ heading: t.heading, towns: towns.filter((x) => t.slugs.includes(x.slug)) })),
+  { heading: 'Maryland Communities', towns: towns.filter((x) => !tiered.includes(x.slug)) },
+];
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+];
+const abs = (path: string) => new URL(path, Astro.site).toString();
+
+const faqs = [
+  { q: 'What areas do you serve?', a: `Our primary markets are Washington, DC and Alexandria, VA, including Alexandria addresses in Fairfax County. We're based in Fort Washington, MD and also serve Prince George's County, including National Harbor, Accokeek, Upper Marlboro, and Bowie, plus Waldorf. Long-distance relocations and freight go to all lower 48 states.` },
+  { q: 'Do you serve towns that aren’t listed?', a: `Often, yes. If you're in Northern Virginia, the DC metro, or Southern Maryland and don't see your town, call ${site.phone} and we'll let you know.` },
+  { q: 'Do you relocate between Maryland, DC, and Virginia?', a: 'Yes. Relocations between Maryland, Washington, DC, and Virginia are a regular part of our work, along with relocations within each.' },
+  { q: 'Do you charge more for towns farther from Fort Washington?', a: 'Distance is one factor in any quote, along with the size of the relocation and access at each address. Every customer gets a free, upfront quote before relocation day.' },
+];
+---
+
+<SiteLayout
+  title={`Service Areas: Washington, DC, Alexandria & Maryland | ${site.name}`}
+  description="Relocation and event logistics in Washington, DC, Alexandria, VA, and Prince George's County, MD. Find your area and get a free quote."
+>
+  <BreadcrumbSchema items={crumbs.map((c) => ({ label: c.label, url: abs(c.href) }))} />
+
+  <ServiceHero
+    kicker="Service Areas"
+    h1="Relocation Services in Washington, DC, Northern Virginia & Maryland"
+    intro="Washington, DC and Alexandria are our primary markets. From our base just outside DC in Fort Washington, MD, we also serve Prince George's County and Southern Maryland, and relocate long-distance to every state in the lower 48."
+    crumbs={crumbs}
+    image={heroImages['/service-areas/']}
+  />
+
+  <section class="towns" aria-labelledby="towns-heading">
+    <div class="towns-inner">
+      <h2 id="towns-heading">Find Relocation Services in Your Area</h2>
+      {groups.map((g) => (
+        <>
+          <h3 class="tier">{g.heading}</h3>
+          <ul class="grid">
+        {g.towns.map((t) => (
+          <li>
+            <a href={t.href}>
+              <span class="name">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" /></svg>
+                Relocation Services in {t.name}
+              </span>
+              <span class="summary">{t.summary}</span>
+            </a>
+          </li>
+        ))}
+          </ul>
+        </>
+      ))}
+    </div>
+  </section>
+
+  <ServiceAreas />
+  <HowItWorks />
+  <Reviews />
+  <FAQ heading="Service Area FAQs" faqs={faqs} />
+  <QuoteForm />
+</SiteLayout>
+
+<style>
+  .towns {
+    padding: var(--space-8) max(16px, 5%);
+    background: var(--white);
+  }
+  .towns-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h2 {
+    margin-bottom: var(--space-5);
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    line-height: 1.1;
+    text-align: center;
+  }
+  .tier {
+    margin: var(--space-5) 0 var(--space-3);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .grid a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: 22px 24px;
+    background: var(--cream);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .grid a:hover {
+    border-color: var(--maroon);
+    box-shadow: 0 8px 22px rgb(0 0 0 / 0.08);
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 1.375rem;
+    color: var(--maroon);
+  }
+  .name svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    fill: var(--gold-dark);
+  }
+  .summary {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+  }
+  @media (max-width: 1000px) {
+    .tier {
+    margin: var(--space-5) 0 var(--space-3);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .towns {
+      padding-block: var(--space-7);
+    }
+    .tier {
+    margin: var(--space-5) 0 var(--space-3);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

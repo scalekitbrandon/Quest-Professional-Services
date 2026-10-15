@@ -1,0 +1,99 @@
+{
+  "pillar": "commercial-relocation",
+  "order": 2,
+  "primaryKeyword": "corporate relocation services Washington DC",
+  "secondaryKeywords": [
+    "business relocation Washington DC",
+    "commercial relocation company DC",
+    "corporate relocation Northern Virginia",
+    "retail and warehouse relocation DC metro",
+    "interstate business relocation"
+  ],
+  "title": "Corporate & Business Relocation in Washington, DC | Quest Professional Services",
+  "description": "Corporate and business relocation in Washington, DC for offices, retail, warehouses, and full company relocations, local or interstate.",
+  "kicker": "Commercial Relocation",
+  "h1": "Corporate & Business Relocation Services in Washington, DC",
+  "intro": "Relocating a headquarters, store, warehouse, or entire company? We relocate businesses across Washington, DC, Northern Virginia, Maryland, and the lower 48, with a plan built around your operations.",
+  "name": "Corporate & Business Relocation",
+  "serviceType": "Corporate relocation",
+  "icon": "building",
+  "overview": {
+    "heading": "What Is a Business Relocation?",
+    "body": [
+      "A business relocation is a commercial relocation of an operating business, often more than just an office: retail fixtures and inventory, warehouse shelving and stock, restaurant equipment, showroom pieces, or a whole company relocating to a new city. It takes more coordination than a typical relocation because inventory, equipment, and customers all depend on the timing.",
+      "Quest Professional Services plans and handles business relocations locally in Maryland, DC, and Virginia, and long-distance to any state in the lower 48. Because we also offer freight transport and commercial packing, one team can handle the relocation from first box to last delivery."
+    ]
+  },
+  "included": [
+    "Relocation planning and scheduling",
+    "Retail fixtures, shelving, and inventory",
+    "Warehouse and stock room relocations",
+    "Commercial packing and labeling",
+    "Local and interstate business relocations",
+    "Unpacking and setup at the new location"
+  ],
+  "whoFor": {
+    "heading": "Businesses We Relocate",
+    "intro": "If your business is changing locations, we can help plan and handle the relocation. We work with:",
+    "items": [
+      "Retail stores and boutiques",
+      "Warehouses and distribution spaces",
+      "Restaurants and food service businesses",
+      "Salons, studios, and showrooms",
+      "Churches, schools, and community organizations",
+      "Companies relocating their headquarters to another state"
+    ]
+  },
+  "approach": {
+    "heading": "How We Plan a Business Relocation",
+    "body": [
+      "We start by learning how your business runs: when you can close, what has to relocate first, and what must be ready on opening day. Then we build a schedule around it, whether that means one overnight relocation or several phases.",
+      "Inventory and equipment are packed and labeled by destination, loaded for the trip, and placed where your team needs them. If you're relocating out of state, we handle the long haul too."
+    ],
+    "points": [
+      {
+        "title": "Built Around Operations",
+        "text": "Your opening date drives the plan, not our truck schedule."
+      },
+      {
+        "title": "Local or Interstate",
+        "text": "Across town or to any state in the lower 48, with one team."
+      },
+      {
+        "title": "Inventory Accounted For",
+        "text": "Packed, labeled, and placed by destination so you can reopen fast."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does a business relocation cost?",
+      "a": "Cost depends on the size of the business, how much inventory and equipment you have, the distance, and your timing. We'll give you a free, upfront quote after we understand your relocation."
+    },
+    {
+      "q": "Are you certified for interstate business relocations?",
+      "a": "Yes. We're U.S. Department of Transportation (DOT) and Motor Carrier (MC) certified (USDOT #3698493, MC #1293117) for relocations that cross state lines, and licensed and insured for every job."
+    },
+    {
+      "q": "Can you relocate our business to another state?",
+      "a": "Yes. We relocate businesses to and from any state in the lower 48. We do not serve Alaska or Hawaii."
+    },
+    {
+      "q": "Can you relocate us in phases?",
+      "a": "Yes. Phased relocations are a common way to keep a business partly open while it relocates. We'll plan the phases with you."
+    },
+    {
+      "q": "Do you pack inventory and equipment?",
+      "a": "Yes. See our commercial packing and unpacking page for more on how we pack businesses."
+    },
+    {
+      "q": "What's the difference between this and your office relocation service?",
+      "a": "Office Relocation is focused on workplaces: desks, files, and equipment. Business relocation covers any type of business, including retail, warehouse, and restaurant relocations, and full company relocations."
+    }
+  ],
+  "related": [
+    "freight-transport",
+    "long-distance-relocation",
+    "storage-organization"
+  ]
+}

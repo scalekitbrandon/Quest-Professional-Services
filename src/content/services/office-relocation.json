@@ -1,0 +1,95 @@
+{
+  "pillar": "commercial-relocation",
+  "order": 1,
+  "primaryKeyword": "office relocation services Washington DC",
+  "secondaryKeywords": [
+    "office relocation company DC",
+    "commercial office relocation Washington DC",
+    "office relocation Northern Virginia",
+    "IT and cubicle relocation DC",
+    "office furniture relocation DC metro"
+  ],
+  "title": "Office Relocation Services in Washington, DC | Quest Professional Services",
+  "description": "Office relocation services in Washington, DC. Furniture, files, and equipment relocated after hours and on weekends to limit downtime. Free quote.",
+  "kicker": "Commercial Relocation",
+  "h1": "Office Relocation Services in Washington, DC",
+  "intro": "Office relocations planned around your business, not the other way around. We relocate desks, files, equipment, and entire suites across Washington, DC, Northern Virginia, and Maryland with as little downtime as possible.",
+  "name": "Office Relocation",
+  "serviceType": "Office Relocation",
+  "icon": "office",
+  "overview": {
+    "heading": "What Does an Office Relocation Involve?",
+    "body": [
+      "An office relocation is a commercial relocation of a workplace: desks, chairs, conference tables, filing cabinets, computers, printers, and everything stored in them. Unlike a home relocation, the clock is running the entire time your team can't work, so the job is as much about scheduling and organization as it is about lifting.",
+      "Quest Professional Services relocates small offices, professional suites, and multi-room workplaces throughout Washington, DC and the surrounding metro. We plan the relocation with your office manager, label everything by destination, and can work after hours or over a weekend so your team walks into a working office on Monday."
+    ]
+  },
+  "included": [
+    "Relocation planning with your office manager",
+    "Desk, chair, and conference furniture relocation",
+    "Furniture disassembly and reassembly",
+    "Filing cabinets, records, and supplies",
+    "Careful handling of computers and electronics",
+    "After-hours and weekend scheduling"
+  ],
+  "whoFor": {
+    "heading": "Office Relocations for Every Kind of Workplace",
+    "intro": "We relocate workplaces of all kinds across Maryland, DC, and Virginia, including:",
+    "items": [
+      "Professional offices: law, accounting, insurance, real estate",
+      "Medical and dental practices",
+      "Nonprofits and associations",
+      "Government contractors and agency support offices",
+      "Small businesses relocating into a bigger space",
+      "Companies consolidating or downsizing their footprint"
+    ]
+  },
+  "approach": {
+    "heading": "How We Keep Office Downtime Low",
+    "body": [
+      "Every office relocation starts with a plan: what's being relocated, what's staying, where everything goes in the new space, and when your team can stop working. We label furniture and boxes by destination room or desk so the unload goes straight to the right spot.",
+      "We can relocate in phases, after hours, or over a weekend. When the crew leaves, desks are set up, furniture is reassembled, and your team can get back to work."
+    ],
+    "points": [
+      {
+        "title": "Scheduled Around You",
+        "text": "Evenings, weekends, or phased relocations, whatever keeps your business running."
+      },
+      {
+        "title": "Labeled by Destination",
+        "text": "Every item is marked for its new room or desk, so nothing is left to sort."
+      },
+      {
+        "title": "Ready to Work",
+        "text": "Furniture reassembled and placed so your team can start right away."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does an office relocation cost?",
+      "a": "Office relocation pricing depends on the size of the office, the amount of furniture and equipment, the distance, building access, and the timing you need. We'll give you a free, upfront quote after learning about your relocation."
+    },
+    {
+      "q": "Can you relocate our office after hours or on a weekend?",
+      "a": "Yes. Many of our office relocations happen in the evening or over a weekend so your business doesn't lose working days."
+    },
+    {
+      "q": "Do you disassemble and reassemble office furniture?",
+      "a": "Yes. We take apart and put back together desks, conference tables, shelving, and other furniture as part of the relocation."
+    },
+    {
+      "q": "Do you relocate offices into Washington, DC buildings?",
+      "a": "Yes. We regularly work throughout DC and Northern Virginia. Let us know about loading docks, freight elevators, and building relocation rules or certificate of insurance requirements so we can plan for them."
+    },
+    {
+      "q": "What about our old office furniture?",
+      "a": "Let us know what's staying behind when you request your quote. We'll plan around it, and we can relocate surplus furniture to storage or another location."
+    }
+  ],
+  "related": [
+    "commercial-packing",
+    "estate-cleanouts",
+    "storage-organization"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "pillar": "specialty-services",
+  "order": 2,
+  "primaryKeyword": "estate cleanout services Washington DC",
+  "secondaryKeywords": [
+    "estate liquidation Washington DC",
+    "estate sale company DC",
+    "estate cleanout Northern Virginia",
+    "house cleanout after death DC",
+    "estate liquidation Maryland"
+  ],
+  "title": "Estate Cleanouts & Liquidation in Washington, DC | Quest Professional Services",
+  "description": "Estate cleanouts and liquidation in Washington, DC: clean up, organization, estate sales, and removal, handled with care. Free consultation.",
+  "kicker": "Specialty Services",
+  "h1": "Estate Cleanouts & Estate Liquidation in Washington, DC",
+  "intro": "Clearing a loved one's home is hard. We handle the clean up, organization, estate sale, and removal with patience and respect, for families and executors across Washington, DC, Northern Virginia, and Maryland.",
+  "name": "Estate Cleanouts",
+  "serviceType": "Estate cleanout and liquidation",
+  "icon": "estate",
+  "overview": {
+    "heading": "What Are Estate Cleanout & Liquidation Services?",
+    "body": [
+      "An estate cleanout is the process of clearing out a home after a death, a relocation to assisted living, or a downsize, so it can be sold, rented, or handed back. Estate liquidation adds the step of selling items of value, often through an estate sale, before the remaining contents are donated, relocated to family, or removed.",
+      "Quest Professional Services handles every part of that process: sorting and organizing the contents, setting aside keepsakes and important papers for the family, running the estate sale, relocating items to family members' homes, and clearing out what's left. One team, one point of contact, and far less on your plate."
+    ]
+  },
+  "included": [
+    "Sorting and organizing the full contents of the home",
+    "Setting aside keepsakes, photos, and documents",
+    "Estate sale planning and setup",
+    "Relocation items to family members, locally or out of state",
+    "Removal and disposal of remaining items",
+    "A broom-clean home ready for sale or turnover"
+  ],
+  "whoFor": {
+    "heading": "Who We Help With Estate Cleanouts",
+    "intro": "Estate work almost always comes at a difficult time. We regularly work with:",
+    "items": [
+      "Adult children settling a parent's estate",
+      "Executors and personal representatives",
+      "Seniors downsizing or relocating to assisted living",
+      "Families who live out of state and can't be on site",
+      "Real estate agents preparing an estate home for sale",
+      "Attorneys and trustees managing an estate"
+    ]
+  },
+  "approach": {
+    "heading": "How We Handle an Estate",
+    "body": [
+      "We start with a conversation, not a crew. You tell us what the family wants to keep, what may have value, and your timeline for the home. From there we build a plan, and we check in before anything leaves the house.",
+      "Because we also handle relocation, packing, and logistics, we can handle everything in-house: relocating heirlooms to relatives, running the sale, and clearing out what's left, without you coordinating three different companies."
+    ],
+    "points": [
+      {
+        "title": "Respect First",
+        "text": "We work at your family's pace and treat every room with care."
+      },
+      {
+        "title": "Nothing Important Lost",
+        "text": "We set aside photos, papers, and keepsakes for the family to review."
+      },
+      {
+        "title": "One Team for Everything",
+        "text": "Sorting, estate sale, relocation, and removal, all handled by one crew."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does an estate cleanout cost?",
+      "a": "Every estate is different. Cost depends on the size of the home, how much is in it, whether there's an estate sale, and how much needs to be removed. We start with a free consultation and give you an upfront quote."
+    },
+    {
+      "q": "Do you run estate sales?",
+      "a": "Yes. Estate sales are part of our estate liquidation service, along with clean up and organization before the sale and clearing the home after."
+    },
+    {
+      "q": "Can you help if our family lives out of state?",
+      "a": "Yes. Many of the families we help aren't local. We can keep you updated throughout and relocate or ship items to family members in any of the lower 48 states."
+    },
+    {
+      "q": "What happens to things nobody wants?",
+      "a": "After the family has chosen what to keep and the sale is done, we remove the remaining items and dispose of them properly."
+    },
+    {
+      "q": "How long does an estate cleanout take?",
+      "a": "It depends on the size of the home and whether there's a sale. We'll give you a timeline in your plan, and we can work toward a closing or listing date if you have one."
+    },
+    {
+      "q": "Will you watch for important papers and valuables?",
+      "a": "Yes. We set aside documents, photos, jewelry, and anything that looks important for the family to review before anything is sold or removed."
+    }
+  ],
+  "related": [
+    "packing-unpacking",
+    "storage-organization",
+    "long-distance-relocation"
+  ]
+}

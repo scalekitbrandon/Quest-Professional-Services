@@ -1,0 +1,60 @@
+---
+// Pillar hub — /residential-relocation/, /commercial-relocation/, /logistics/.
+// Targets the broad pillar keyword and links down to every child service.
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import ServiceHero from '../../components/service/ServiceHero.astro';
+import ServiceOverview from '../../components/service/ServiceOverview.astro';
+import ServiceCards from '../../components/service/ServiceCards.astro';
+import WhyChoose from '../../components/sections/WhyChoose.astro';
+import HowItWorks from '../../components/sections/HowItWorks.astro';
+import Reviews from '../../components/sections/Reviews.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import ServiceAreas from '../../components/sections/ServiceAreas.astro';
+import QuoteForm from '../../components/sections/QuoteForm.astro';
+import { site } from '../../data/site';
+import { heroImages } from '../../data/photos';
+
+export function getStaticPaths() {
+  return site.servicePillars.map((p) => ({ params: { pillar: p.slug } }));
+}
+
+const { pillar: slug } = Astro.params;
+const pillar = site.servicePillars.find((p) => p.slug === slug)!;
+const hub = (await getEntry('pillars', slug as CollectionEntry<'pillars'>['id']))!.data;
+
+const services = (await getCollection('services', (e) => e.data.pillar === slug))
+  .sort((a, b) => a.data.order - b.data.order);
+const cards = services.map((e) => ({
+  name: pillar.services.find((s) => s.slug === e.id)?.name ?? e.data.name,
+  href: `/${slug}/${e.id}/`,
+  blurb: e.data.intro,
+  icon: e.data.icon,
+}));
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: pillar.name, href: `/${slug}/` },
+];
+const abs = (path: string) => new URL(path, Astro.site).toString();
+---
+
+<SiteLayout title={hub.title} description={hub.description}>
+  <BreadcrumbSchema items={crumbs.map((c) => ({ label: c.label, url: abs(c.href) }))} />
+
+  <ServiceHero kicker={hub.kicker} h1={hub.h1} intro={hub.intro} crumbs={crumbs} image={heroImages[`/${slug}/`]} />
+  <ServiceCards heading={hub.servicesHeading} intro={hub.servicesIntro} cards={cards} />
+  <ServiceOverview
+    heading={hub.overview.heading}
+    body={hub.overview.body}
+    included={cards.map((c) => c.name)}
+    includedHeading={`${pillar.name} Services`}
+  />
+  <WhyChoose />
+  <HowItWorks variant={slug === 'event-logistics' ? 'freight' : 'relocation'} />
+  <Reviews />
+  <FAQ heading={`${pillar.name} FAQs`} faqs={hub.faqs} />
+  <ServiceAreas />
+  <QuoteForm />
+</SiteLayout>

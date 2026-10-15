@@ -1,0 +1,161 @@
+---
+// Job-photo carousel: full-width row of square photos (4 up on desktop) with
+// edge arrows. Layout follows Brandon's reference. Real crew/truck photos go
+// in `photos`; until then branded placeholder tiles hold the layout.
+
+import { photos as P, type Photo } from '../../data/photos';
+
+const photos: Photo[] = [
+  P.driverSquare, P.crewTruckSquare, P.crewTeamSquare, P.handTruckSquare,
+  P.freightSquare, P.eventSquare, P.strappingSquare, P.vanWrappedSquare,
+  P.palletSquare, P.crewBrandedSquare, P.truckInteriorSquare, P.truckSideSquare,
+];
+const placeholderCount = 8;
+---
+
+<section class="gallery" aria-label="Photos from recent relocations">
+  <div class="track-wrap">
+    <button class="arrow prev" type="button" aria-label="Previous photos">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+    </button>
+
+    <ul class="track" tabindex="0">
+      {photos.length > 0
+        ? photos.map((p) => (
+            <li class="slide">
+              <img src={p.src} alt={p.alt} loading="lazy" width="600" height="600" />
+            </li>
+          ))
+        : Array.from({ length: placeholderCount }).map(() => (
+            <li class="slide placeholder" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M6 14h8l3-5h14l3 5h8v26H6z" /><circle cx="24" cy="26" r="8" /></svg>
+              <span>Job photo</span>
+            </li>
+          ))}
+    </ul>
+
+    <button class="arrow next" type="button" aria-label="Next photos">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+    </button>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.gallery').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('.track')!;
+    const step = () => (track.querySelector<HTMLElement>('.slide')?.offsetWidth ?? 300) + 24;
+    root.querySelector('.prev')?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    root.querySelector('.next')?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  });
+</script>
+
+<style>
+  .gallery {
+    padding: var(--space-7) 0;
+    background: var(--white);
+  }
+  .track-wrap {
+    position: relative;
+    padding-inline: max(16px, 1.25%);
+  }
+  .track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 3 * 24px) / 4);
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+  .slide {
+    aspect-ratio: 1;
+    scroll-snap-align: start;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    background: radial-gradient(ellipse at 30% 20%, var(--maroon-light), var(--maroon) 50%, var(--maroon-dark));
+    color: var(--gold-light);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .placeholder svg {
+    width: 56px;
+    height: 56px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.92);
+    box-shadow: 0 4px 14px rgb(0 0 0 / 0.18);
+    color: var(--maroon);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.2s, color 0.2s;
+  }
+  .arrow:hover {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  .arrow svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .prev {
+    left: max(24px, 2%);
+  }
+  .next {
+    right: max(24px, 2%);
+  }
+
+  @media (max-width: 1000px) {
+    .track {
+      grid-auto-columns: calc((100% - 24px) / 2);
+    }
+  }
+  @media (max-width: 600px) {
+    .gallery {
+      padding-block: var(--space-6);
+    }
+    .track {
+      grid-auto-columns: 82%;
+      gap: 16px;
+    }
+  }
+</style>

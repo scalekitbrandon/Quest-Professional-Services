@@ -1,0 +1,94 @@
+{
+  "pillar": "specialty-services",
+  "order": 3,
+  "primaryKeyword": "storage organization services Washington DC",
+  "secondaryKeywords": [
+    "storage unit organization DC",
+    "garage organization help DC metro",
+    "basement organizing service Washington DC",
+    "storage unit help Alexandria VA",
+    "relocate items to storage unit DC"
+  ],
+  "title": "Storage Organization Services in Washington, DC | Quest Professional Services",
+  "description": "Storage unit, garage, and basement organization in Washington, DC. We sort, organize, and set up your storage so you can find what you need.",
+  "kicker": "Specialty Services",
+  "h1": "Storage Organization Services in Washington, DC",
+  "intro": "Overstuffed storage unit, garage, or basement? We sort it, organize it, and set it up so you can actually find things, anywhere in the DC metro.",
+  "name": "Storage Organization",
+  "serviceType": "Storage organization",
+  "icon": "shelves",
+  "overview": {
+    "heading": "What Is Storage Organization?",
+    "body": [
+      "Storage organization is the heavy-lifting side of getting organized. We empty out a storage unit, garage, attic, or basement, help you sort what stays and what goes, and load everything back in a way that makes sense: heavy items low, things you use often near the front, and boxes labeled so you can find them.",
+      "Quest Professional Services also relocates items into and out of storage units, so it pairs naturally with a relocation, a renovation, or an estate cleanout. Our crews work throughout Washington, DC, Northern Virginia, and Maryland."
+    ]
+  },
+  "included": [
+    "Emptying and sorting storage units, garages, attics, and basements",
+    "Keep, donate, and sell sorting with you",
+    "Organized reloading with clear walkways",
+    "Relocating items into or out of storage units",
+    "Labeling so you can find things later"
+  ],
+  "whoFor": {
+    "heading": "Who Needs Storage Organization Help",
+    "intro": "Storage organization is a good fit when the space has gotten away from you, or when it's about to change hands:",
+    "items": [
+      "Homeowners whose garage no longer fits a car",
+      "Anyone paying for a storage unit they can't get into",
+      "Families getting ready to sell a home",
+      "People combining two households after a relocation",
+      "Executors and families handling a loved one's belongings",
+      "Small businesses with an overflowing stock room or unit"
+    ]
+  },
+  "approach": {
+    "heading": "How We Organize a Storage Space",
+    "body": [
+      "We start by pulling everything out so you can see what you actually have. Then we sort together, item by item or box by box, into keep, donate, and sell. You make the decisions; we do the lifting.",
+      "What stays goes back in with a plan: heavy and rarely used items toward the back, everyday things up front, and a clear path to walk through."
+    ],
+    "points": [
+      {
+        "title": "You Decide, We Lift",
+        "text": "You choose what stays and what goes. Our crew handles all the heavy work."
+      },
+      {
+        "title": "Relocated When Needed",
+        "text": "Items can go into a storage unit, to your new home, or to family, all handled by the same crew."
+      },
+      {
+        "title": "Built to Stay Organized",
+        "text": "We reload with walkways and labels so the space stays usable."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does storage organization cost?",
+      "a": "It depends on the size of the space, how much is in it, and whether anything needs to be relocated. We'll give you a free, upfront quote once we know what we're working with."
+    },
+    {
+      "q": "Do you rent storage units?",
+      "a": "Our service is the labor: sorting, organizing, and relocating items into or out of a storage unit you choose. Call us and we'll talk through what makes sense for your situation."
+    },
+    {
+      "q": "Can you relocate my things into a storage unit during my relocation?",
+      "a": "Yes. We can split a relocation so some items go to your new home and some go to a storage unit, or relocate things out of storage later."
+    },
+    {
+      "q": "What happens to the things I don't want?",
+      "a": "You decide. We'll set items aside for donation or sale. If you're clearing a loved one's home, our estate cleanout and liquidation service handles the rest."
+    },
+    {
+      "q": "Do you organize garages and basements, too?",
+      "a": "Yes. Storage units, garages, basements, attics, sheds, and stock rooms are all part of this service."
+    }
+  ],
+  "related": [
+    "packing-unpacking",
+    "estate-cleanouts",
+    "local-relocation"
+  ]
+}

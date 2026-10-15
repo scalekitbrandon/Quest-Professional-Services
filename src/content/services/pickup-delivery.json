@@ -1,0 +1,95 @@
+{
+  "pillar": "event-logistics",
+  "order": 3,
+  "primaryKeyword": "pickup and delivery services Washington DC",
+  "secondaryKeywords": [
+    "delivery service Washington DC",
+    "event delivery DC metro",
+    "furniture pickup and delivery DC",
+    "business delivery service Northern Virginia",
+    "large item delivery Alexandria VA"
+  ],
+  "title": "Pickup & Delivery Services in Washington, DC | Quest Professional Services",
+  "description": "Pickup and delivery in Washington, DC for events, businesses, and homes: furniture, equipment, supplies, and purchases delivered inside.",
+  "kicker": "Event Logistics",
+  "h1": "Pickup & Delivery Services in Washington, DC",
+  "intro": "Event supplies to a venue, equipment between job sites, or a sofa that won't fit in your car. We pick up and deliver for events, businesses, and homes across Washington, DC, Northern Virginia, Maryland, and the lower 48.",
+  "name": "Pickup & Delivery",
+  "serviceType": "Pickup and delivery",
+  "icon": "handoff",
+  "overview": {
+    "heading": "What Are Pickup & Delivery Services?",
+    "body": [
+      "Pickup and delivery is a smaller-scale relocation: one or a few items picked up from a store, warehouse, seller, or home and delivered to wherever you need them. It's ideal when you don't need a full relocation crew for the day but do need a truck and some strong, careful hands.",
+      "Quest Professional Services handles pickups and deliveries for event teams, businesses, and homeowners across Washington, DC, Alexandria, Northern Virginia, and Prince George's County, with longer-distance deliveries to any state in the lower 48."
+    ]
+  },
+  "included": [
+    "Furniture and appliance pickup and delivery",
+    "Store, warehouse, and online marketplace purchases",
+    "Relocations between homes, storage units, and offices",
+    "Business and job-site deliveries",
+    "In-home placement, not just curbside drop-off",
+    "Local and long-distance options"
+  ],
+  "whoFor": {
+    "heading": "Who Books Pickup & Delivery",
+    "intro": "If it's too big for your car and too small for a full relocation, it's a pickup and delivery. Common customers include:",
+    "items": [
+      "Event planners sending supplies to and from venues",
+      "Vendors and exhibitors delivering to event sites",
+      "Businesses sending items to customers or job sites",
+      "Shoppers buying furniture or appliances without delivery",
+      "Anyone relocating items into or out of a storage unit",
+      "Estate heirs receiving furniture from a family home"
+    ]
+  },
+  "approach": {
+    "heading": "How Pickup & Delivery Works",
+    "body": [
+      "Send us the pickup address, the delivery address, and what you need relocated. We'll give you an upfront quote and a pickup time.",
+      "Our crew wraps and protects items for the trip, then carries them into your home or business and places them where you want them."
+    ],
+    "points": [
+      {
+        "title": "Inside, Not Curbside",
+        "text": "We carry items in and place them in the room you choose."
+      },
+      {
+        "title": "Protected in Transit",
+        "text": "Items are wrapped and secured, just like on a full relocation."
+      },
+      {
+        "title": "Local or Long-Distance",
+        "text": "Across town or to another state in the lower 48."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "How much does pickup and delivery cost?",
+      "a": "It depends on the item, the distance, and access at both addresses, like stairs or elevators. Send us the details for a free, upfront quote."
+    },
+    {
+      "q": "Can you pick up something I bought online or from a store?",
+      "a": "Yes. We pick up from stores, warehouses, and private sellers. Just make sure the item is paid for and ready for pickup."
+    },
+    {
+      "q": "Will you carry the item inside?",
+      "a": "Yes. We bring items inside and place them where you want them, including up stairs."
+    },
+    {
+      "q": "Do you deliver out of state?",
+      "a": "Yes. We deliver to any state in the lower 48. For larger business loads, see our freight transport page."
+    },
+    {
+      "q": "Can you deliver to a storage unit?",
+      "a": "Yes. We deliver to homes, businesses, and storage units, and can pick items up from storage too."
+    }
+  ],
+  "related": [
+    "event-transportation",
+    "event-setup",
+    "freight-transport"
+  ]
+}

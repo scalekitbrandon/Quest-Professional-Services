@@ -1,0 +1,120 @@
+---
+// "Who this is for" — scannable self-identification cards.
+interface Props {
+  heading: string;
+  intro: string;
+  items: string[];
+}
+
+const { heading, intro, items } = Astro.props;
+---
+
+<section class="who" aria-labelledby="who-heading">
+  <div class="who-inner">
+    <header class="head">
+      <p class="eyebrow">Who It’s For</p>
+      <h2 id="who-heading">{heading}</h2>
+      <p class="sub">{intro}</p>
+    </header>
+    <ul class="grid">
+      {items.map((item) => (
+        <li>
+          <span class="tick">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 13 5 5L20 7" /></svg>
+          </span>
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .who {
+    padding: var(--space-8) max(16px, 5%);
+    background: var(--cream);
+  }
+  .who-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .head {
+    max-width: 820px;
+    margin: 0 auto var(--space-6);
+    text-align: center;
+  }
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  h2 {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    line-height: 1.1;
+    color: var(--black);
+    text-wrap: balance;
+  }
+  .sub {
+    margin: var(--space-3) 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #5a5a5a;
+    text-wrap: balance;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .grid li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 22px;
+    background: var(--white);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--maroon);
+    border-radius: var(--radius-sm);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    color: var(--black);
+  }
+  .tick {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .tick svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--maroon-dark);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @media (max-width: 1000px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .who {
+      padding-block: var(--space-7);
+    }
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
