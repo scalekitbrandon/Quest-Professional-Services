@@ -6,7 +6,7 @@ import mdx from '@astrojs/mdx';
 // an adapter (@astrojs/vercel, @astrojs/netlify, @astrojs/cloudflare)
 // when the hosting target is chosen. Defaults to static output.
 export default defineConfig({
-  site: 'https://www.questprofessionalllc.com',
+  site: 'https://questprofessionalllc.com',
   integrations: [sitemap(), mdx()],
   output: 'static',
 });

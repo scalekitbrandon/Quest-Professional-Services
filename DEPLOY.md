@@ -6,7 +6,7 @@ General playbook: `~/Scale Kit - Visual Studio Code/SOP-astro-cloudflare-deploy.
 - **Hosting:** Cloudflare Workers & Pages, static build, no adapter
   - Framework preset: Astro · Build command: `npm run build` · Output directory: `dist`
   - Cloudflare project name: _(fill in after connecting)_
-- **Domain:** www.questprofessionalllc.com (`site` in astro.config.mjs; root redirects to www). Registrar: **Wix** (domain stays registered there; only nameservers move to Cloudflare).
+- **Domain:** questprofessionalllc.com, bare domain is primary (`site` in astro.config.mjs), matching Brandon's other sites. `www` redirects to the bare domain via a Cloudflare Redirect Rule + proxied `www` DNS record; www is NOT attached to the Worker. Registrar: **Wix** (domain stays registered there; only nameservers move to Cloudflare).
 - **Before cutover (checked 2026-10-15):** DNS hosted on Wix (ns8/ns9.wixdns.net); old Wix site on root A 185.230.63.x + www CNAME to wixdns. No other subdomains. No DKIM or DMARC set up.
 - **⚠ Email lives on this domain (Google Workspace):** keep these exactly:
   - MX: 1 aspmx.l.google.com (10), alt1 (20), alt2 (30), alt3 (40), alt4 (50) — all `.aspmx.l.google.com`
