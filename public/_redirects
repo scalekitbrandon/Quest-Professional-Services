@@ -1,5 +1,6 @@
 # Old Wix URLs → new pages (301 keeps any rankings/links the old site earned).
 # Cloudflare reads this file from the build output automatically.
+/about                                      /about/                                    301
 /services                                   /                                          301
 /google-reviews                             /reviews/                                  301
 /request-a-quote                            /#quote                                    301
