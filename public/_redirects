@@ -10,3 +10,5 @@
 /service-page/packing-wrapping              /residential-relocation/packing-unpacking/ 301
 /service-page/logistics-and-transportation  /specialty-services/freight-transport/     301
 /service-page/domestic-trucking             /specialty-services/freight-transport/     301
+/sitemap_index.xml /sitemap-index.xml 301
+/sitemap.xml /sitemap-index.xml 301
