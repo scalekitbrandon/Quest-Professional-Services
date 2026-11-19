@@ -18,8 +18,8 @@ const abs = (path: string) => new URL(path, Astro.site).toString();
 ---
 
 <SiteLayout
-  title={`Customer Reviews | ${site.name}, Fort Washington, MD`}
-  description="Read Google reviews from families and businesses who relocated with Quest Professional Services in Fort Washington, Prince George's County, and the DC metro."
+  title={`Customer Reviews | Quest Professional, Fort Washington, MD`}
+  description="Read Google reviews from families and businesses who relocated with Quest Professional in Fort Washington, Prince George's County and the DC metro."
 >
   <BreadcrumbSchema items={crumbs.map((c) => ({ label: c.label, url: abs(c.href) }))} />
 
